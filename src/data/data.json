@@ -1,0 +1,885 @@
+{
+  "players": [
+    {
+      "id": "adrienne",
+      "name": "Adrienne Nova",
+      "sex": "f",
+      "recruitedBy": "maresa"
+    },
+    {
+      "id": "alejandra",
+      "name": "Alejandra Guzman",
+      "sex": "f",
+      "recruitedBy": "clare"
+    },
+    {
+      "id": "alex",
+      "name": "Alex Mersereau",
+      "sex": "m",
+      "recruitedBy": "clare"
+    },
+    {
+      "id": "allison",
+      "name": "Allison Gentry",
+      "sex": "f",
+      "recruitedBy": "chelsea"
+    },
+    {
+      "id": "amber-b",
+      "name": "Amber Banerjee",
+      "sex": "f",
+      "recruitedBy": null
+    },
+    {
+      "id": "amber-w",
+      "name": "Amber Wick",
+      "sex": "f",
+      "recruitedBy": null
+    },
+    {
+      "id": "andrew",
+      "name": "Andrew Martinez",
+      "sex": "m",
+      "recruitedBy": "amber-b"
+    },
+    {
+      "id": "anna-d",
+      "name": "Anna Doty",
+      "sex": "f",
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "annie-a",
+      "name": "Annie Ayre",
+      "sex": "f",
+      "recruitedBy": null
+    },
+    {
+      "id": "annie-e",
+      "name": "Annie Ellis",
+      "sex": "f",
+      "recruitedBy": "clare"
+    },
+    {
+      "id": "armando",
+      "name": "Armando Diaz Tolentino",
+      "sex": "m",
+      "recruitedBy": null
+    },
+    {
+      "id": "ashley",
+      "name": "Ashley McIntyre",
+      "sex": "f",
+      "recruitedBy": "andrew"
+    },
+    {
+      "id": "brooke",
+      "name": "Brooke Richey",
+      "sex": "f",
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "cameron",
+      "name": "Cameron Augsten",
+      "sex": "m",
+      "recruitedBy": "scott-t"
+    },
+    {
+      "id": "candice",
+      "name": "Candice Lampe",
+      "sex": "f",
+      "recruitedBy": "eli"
+    },
+    {
+      "id": "carmela",
+      "name": "Carmela Vallalta",
+      "sex": "f",
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "carolin",
+      "name": "Carolin Rohe",
+      "sex": "f",
+      "recruitedBy": "clare"
+    },
+    {
+      "id": "chelsea",
+      "name": "Chelsea Williamson",
+      "sex": "f",
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "christina",
+      "name": "Christina Davis",
+      "sex": "f",
+      "recruitedBy": "ryan"
+    },
+    {
+      "id": "clare",
+      "name": "Clare Ellis",
+      "sex": "f",
+      "recruitedBy": "cameron"
+    },
+    {
+      "id": "cody-f",
+      "name": "Cody Fritts",
+      "sex": "m",
+      "recruitedBy": null
+    },
+    {
+      "id": "cody-j",
+      "name": "Cody Jackson",
+      "sex": "m",
+      "recruitedBy": "clare"
+    },
+    {
+      "id": "donald",
+      "name": "Donald Birch",
+      "sex": "m",
+      "recruitedBy": null
+    },
+    {
+      "id": "eli",
+      "name": "Eli Hanna",
+      "sex": "m",
+      "recruitedBy": "cameron"
+    },
+    {
+      "id": "eric",
+      "name": "Eric Wick",
+      "sex": "m",
+      "recruitedBy": "amber-w"
+    },
+    {
+      "id": "eunice",
+      "name": "Eunice Choi",
+      "sex": "f",
+      "recruitedBy": null
+    },
+    {
+      "id": "evalynn",
+      "name": "Evalynn Romano",
+      "sex": "f",
+      "recruitedBy": "hannah"
+    },
+    {
+      "id": "hannah",
+      "name": "Hannah Scholes",
+      "sex": "f",
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "janna",
+      "name": "Janna Krein",
+      "sex": "f",
+      "recruitedBy": "scott-t"
+    },
+    {
+      "id": "jennifer",
+      "name": "Jennifer Sonson",
+      "sex": "f",
+      "recruitedBy": "cody-f"
+    },
+    {
+      "id": "jesse",
+      "name": "Jesse Palek-Zahn",
+      "sex": "m",
+      "recruitedBy": "allison"
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Olson",
+      "sex": "m",
+      "recruitedBy": null
+    },
+    {
+      "id": "kc",
+      "name": "KC Burt",
+      "sex": "f",
+      "recruitedBy": "andrew"
+    },
+    {
+      "id": "kile",
+      "name": "Kile Beaudry",
+      "sex": "m",
+      "recruitedBy": "mandy"
+    },
+    {
+      "id": "leah",
+      "name": "Leah Ganis",
+      "sex": "f",
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "lynsey",
+      "name": "Lynsey Gagnon",
+      "sex": "f",
+      "recruitedBy": "tyler"
+    },
+    {
+      "id": "mackenzie",
+      "name": "Mackenzie Waples",
+      "sex": "f",
+      "recruitedBy": "andrew"
+    },
+    {
+      "id": "mandy",
+      "name": "Mandy LaRoque",
+      "sex": "f",
+      "recruitedBy": "ryan"
+    },
+    {
+      "id": "maresa",
+      "name": "Maresa Edwards",
+      "sex": "f",
+      "recruitedBy": null
+    },
+    {
+      "id": "margaret",
+      "name": "Margaret Du",
+      "sex": "f",
+      "recruitedBy": null
+    },
+    {
+      "id": "martha",
+      "name": "Martha Caldwell",
+      "sex": "f",
+      "recruitedBy": "alejandra"
+    },
+    {
+      "id": "molly-a",
+      "name": "Molly Ayre-Svingen",
+      "sex": "f",
+      "recruitedBy": "annie-a"
+    },
+    {
+      "id": "molly-m",
+      "name": "Molly Melbye",
+      "sex": "f",
+      "recruitedBy": null
+    },
+    {
+      "id": "neal",
+      "name": "Neal Kawas",
+      "sex": "m",
+      "recruitedBy": null
+    },
+    {
+      "id": "paige-s",
+      "name": "Paige Saffell",
+      "sex": "f",
+      "recruitedBy": "mandy"
+    },
+    {
+      "id": "paul",
+      "name": "Paul Allen",
+      "sex": "m",
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "peter",
+      "name": "Peter Liang",
+      "sex": "m",
+      "recruitedBy": null
+    },
+    {
+      "id": "rachel",
+      "name": "Rachel Krebs",
+      "sex": "f",
+      "recruitedBy": "andrew"
+    },
+    {
+      "id": "robert",
+      "name": "Robert Sherer",
+      "sex": "m",
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "ryan",
+      "name": "Ryan Davis",
+      "sex": "m",
+      "recruitedBy": null
+    },
+    {
+      "id": "sarah",
+      "name": "Sarah Gannon",
+      "sex": "f",
+      "recruitedBy": "scott-t"
+    },
+    {
+      "id": "scott-f",
+      "name": "Scott Fletcher",
+      "sex": "m",
+      "recruitedBy": "andrew"
+    },
+    {
+      "id": "scott-t",
+      "name": "Scott Thiessen",
+      "sex": "m",
+      "recruitedBy": null
+    },
+    {
+      "id": "shom",
+      "name": "Shom Banerjee",
+      "sex": "m",
+      "recruitedBy": "amber-b"
+    },
+    {
+      "id": "tyler",
+      "name": "Tyler Engstrom",
+      "sex": "m",
+      "recruitedBy": null
+    }
+  ],
+  "seasons": [
+    {
+      "id": "2014.3",
+      "name": "ExCo Class",
+      "players": [
+        "amber-b",
+        "amber-w",
+        "armando",
+        "cody-f",
+        "donald",
+        "eunice",
+        "jordan",
+        "maresa",
+        "margaret",
+        "molly-m",
+        "neal",
+        "peter",
+        "ryan",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2014.4",
+      "name": "Fall 2014",
+      "players": [
+        "adrienne",
+        "amber-b",
+        "amber-w",
+        "armando",
+        "cody-f",
+        "donald",
+        "eunice",
+        "jordan",
+        "maresa",
+        "margaret",
+        "molly-m",
+        "neal",
+        "peter",
+        "ryan",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2015.1",
+      "name": "Winter 2015",
+      "players": [
+        "amber-b",
+        "amber-w",
+        "andrew",
+        "armando",
+        "cody-f",
+        "eunice",
+        "janna",
+        "maresa",
+        "margaret",
+        "molly-m",
+        "neal",
+        "peter",
+        "ryan",
+        "scott-t",
+        "shom",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2015.2",
+      "name": "Spring 2015",
+      "players": [
+        "amber-b",
+        "amber-w",
+        "andrew",
+        "armando",
+        "cameron",
+        "chelsea",
+        "cody-f",
+        "eunice",
+        "janna",
+        "jennifer",
+        "margaret",
+        "neal",
+        "paul",
+        "peter",
+        "robert",
+        "ryan",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2015.3",
+      "name": "Summer 2015",
+      "players": [
+        "amber-b",
+        "amber-w",
+        "andrew",
+        "armando",
+        "carolin",
+        "chelsea",
+        "clare",
+        "cody-j",
+        "eli",
+        "janna",
+        "jennifer",
+        "leah",
+        "neal",
+        "paul",
+        "peter",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2015.4",
+      "name": "Fall 2015",
+      "players": [
+        "alejandra",
+        "allison",
+        "amber-b",
+        "amber-w",
+        "andrew",
+        "armando",
+        "candice",
+        "chelsea",
+        "clare",
+        "cody-j",
+        "eli",
+        "jennifer",
+        "leah",
+        "neal",
+        "paul",
+        "peter",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2016.1",
+      "name": "Winter 2016",
+      "players": [
+        "alex",
+        "allison",
+        "amber-b",
+        "amber-w",
+        "andrew",
+        "armando",
+        "candice",
+        "carolin",
+        "chelsea",
+        "clare",
+        "cody-j",
+        "eli",
+        "eric",
+        "leah",
+        "mandy",
+        "neal",
+        "paul",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2016.2",
+      "name": "Spring 2016",
+      "players": [
+        "alejandra",
+        "allison",
+        "amber-b",
+        "amber-w",
+        "andrew",
+        "ashley",
+        "candice",
+        "chelsea",
+        "clare",
+        "cody-j",
+        "eli",
+        "eric",
+        "jennifer",
+        "leah",
+        "mandy",
+        "neal",
+        "paul",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2016.3",
+      "name": "Summer 2016",
+      "players": [
+        "alejandra",
+        "allison",
+        "amber-b",
+        "amber-w",
+        "andrew",
+        "ashley",
+        "cameron",
+        "chelsea",
+        "clare",
+        "cody-j",
+        "eli",
+        "eric",
+        "leah",
+        "mandy",
+        "neal",
+        "paige-s",
+        "paul",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2016.4",
+      "name": "Fall 2016",
+      "players": [
+        "alejandra",
+        "allison",
+        "amber-w",
+        "andrew",
+        "armando",
+        "ashley",
+        "cameron",
+        "candice",
+        "cody-j",
+        "eli",
+        "hannah",
+        "leah",
+        "neal",
+        "paige-s",
+        "paul",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2017.1",
+      "name": "Winter 2017",
+      "players": [
+        "allison",
+        "amber-w",
+        "andrew",
+        "ashley",
+        "cameron",
+        "christina",
+        "cody-j",
+        "eric",
+        "hannah",
+        "leah",
+        "mandy",
+        "neal",
+        "paul",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2017.2",
+      "name": "Spring 2017",
+      "players": [
+        "alejandra",
+        "allison",
+        "amber-w",
+        "andrew",
+        "armando",
+        "ashley",
+        "cameron",
+        "christina",
+        "cody-j",
+        "eric",
+        "hannah",
+        "kile",
+        "leah",
+        "mandy",
+        "neal",
+        "paul",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2017.3",
+      "name": "Summer 2017",
+      "players": [
+        "alejandra",
+        "allison",
+        "amber-w",
+        "andrew",
+        "armando",
+        "cameron",
+        "eric",
+        "hannah",
+        "kile",
+        "leah",
+        "lynsey",
+        "mandy",
+        "neal",
+        "paige-s",
+        "paul",
+        "ryan",
+        "scott-f",
+        "scott-t"
+      ]
+    },
+    {
+      "id": "2017.4",
+      "name": "Fall 2017",
+      "players": [
+        "allison",
+        "amber-w",
+        "annie-e",
+        "armando",
+        "ashley",
+        "brooke",
+        "cameron",
+        "kile",
+        "leah",
+        "lynsey",
+        "mandy",
+        "neal",
+        "paige-s",
+        "paul",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t"
+      ]
+    },
+    {
+      "id": "2018.1",
+      "name": "Winter 2018",
+      "players": [
+        "alejandra",
+        "allison",
+        "amber-w",
+        "armando",
+        "ashley",
+        "cameron",
+        "clare",
+        "eric",
+        "jennifer",
+        "kile",
+        "mandy",
+        "neal",
+        "paul",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2018.2",
+      "name": "Spring 2018",
+      "players": [
+        "amber-w",
+        "armando",
+        "ashley",
+        "cameron",
+        "carmela",
+        "eric",
+        "evalynn",
+        "jennifer",
+        "kc",
+        "kile",
+        "lynsey",
+        "mandy",
+        "neal",
+        "paul",
+        "robert",
+        "scott-f",
+        "scott-t"
+      ]
+    },
+    {
+      "id": "2018.3",
+      "name": "Summer 2018",
+      "players": [
+        "amber-w",
+        "armando",
+        "ashley",
+        "carmela",
+        "eric",
+        "evalynn",
+        "jesse",
+        "kc",
+        "kile",
+        "lynsey",
+        "mandy",
+        "neal",
+        "paul",
+        "robert",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2018.4",
+      "name": "Fall 2018",
+      "players": [
+        "amber-w",
+        "andrew",
+        "annie-a",
+        "armando",
+        "ashley",
+        "carmela",
+        "eric",
+        "jesse",
+        "kc",
+        "kile",
+        "lynsey",
+        "mackenzie",
+        "neal",
+        "paul",
+        "robert",
+        "sarah",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2019.1",
+      "name": "Winter 2019",
+      "players": [
+        "amber-w",
+        "andrew",
+        "annie-a",
+        "armando",
+        "ashley",
+        "carmela",
+        "eric",
+        "jesse",
+        "kc",
+        "kile",
+        "lynsey",
+        "mandy",
+        "neal",
+        "paul",
+        "rachel",
+        "ryan",
+        "sarah",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2019.2",
+      "name": "Spring 2019",
+      "players": [
+        "amber-w",
+        "andrew",
+        "anna-d",
+        "annie-a",
+        "armando",
+        "ashley",
+        "carmela",
+        "eric",
+        "jesse",
+        "kc",
+        "martha",
+        "molly-a",
+        "neal",
+        "paul",
+        "rachel",
+        "robert",
+        "ryan",
+        "sarah",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2019.3",
+      "name": "Summer 2019",
+      "players": [
+        "amber-w",
+        "anna-d",
+        "annie-a",
+        "armando",
+        "ashley",
+        "carmela",
+        "eric",
+        "jesse",
+        "kc",
+        "martha",
+        "molly-a",
+        "neal",
+        "paul",
+        "rachel",
+        "robert",
+        "ryan",
+        "sarah",
+        "scott-f",
+        "scott-t",
+        "tyler"
+      ]
+    },
+    {
+      "id": "2019.4",
+      "name": "Fall 2019",
+      "players": [
+        "amber-w",
+        "annie-a",
+        "armando",
+        "ashley",
+        "carmela",
+        "eric",
+        "jesse",
+        "kc",
+        "martha",
+        "molly-a",
+        "neal",
+        "paul",
+        "rachel",
+        "robert",
+        "ryan",
+        "sarah",
+        "scott-f",
+        "scott-t"
+      ]
+    }
+
+  ]
+}
