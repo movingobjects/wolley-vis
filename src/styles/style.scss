@@ -1,3 +1,24 @@
-body {
-  
+.node circle {
+  fill: #fff;
+  stroke: #999;
+  stroke-width: 2px;
+}
+
+.node text {
+
+  font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.node--internal text {
+  text-shadow:
+    0 1px 0 #fff,
+    0 -1px 0 #fff,
+    1px 0 0 #fff,
+    -1px 0 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 2px;
 }
