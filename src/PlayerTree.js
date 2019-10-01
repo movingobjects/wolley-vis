@@ -17,15 +17,12 @@ export default class PlayerTree {
   constructor() {
 
     this.players = data.players;
-
     this.seasons = data.seasons;
-    this.seasons.sort((a, b) => {
-      return a.year - b.year;
-    });
 
-    let treeData = this.toTreeData(this.players);
+    this.players.sort((a, b) => a.name - b.name);
+    this.seasons.sort((a, b) => a.year - b.year);
 
-    this.generateTree(treeData);
+    this.generateTree();
 
   }
 
@@ -46,7 +43,9 @@ export default class PlayerTree {
 
   }
 
-  generateTree(treeData) {
+  generateTree() {
+
+    const treeData = this.toTreeData(this.players);
 
     const tree = d3.tree()
       .size([

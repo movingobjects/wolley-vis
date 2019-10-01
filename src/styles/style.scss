@@ -1,9 +1,14 @@
 
+$color-f-a: #68d;
+$color-m-a: #3c9;
+$color-f-b: mix($color-f-a, white, 40%);
+$color-m-b: mix($color-m-a, white, 40%);
+
 body {
 
   margin: 50px;
 
-  font-size: 13px;
+  font-size: 12px;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -16,14 +21,71 @@ body {
 
 }
 
+#timeline {
+
+  div.controls {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f6f9f9;
+    margin-bottom: 25px;
+
+    p {
+      display: inline-block;
+      margin: 0;
+
+      & + p {
+        margin-left: 15px;
+      }
+
+    }
+
+  }
+
+  svg {
+
+    g.row {
+      &.current-team {
+        &.sex-f text,
+        &.sex-f rect {
+          fill: $color-f-a;
+        }
+        &.sex-m text,
+        &.sex-m rect {
+          fill: $color-m-a;
+        }
+      }
+      &:not(.current-team) {
+        opacity: 0.5;
+        &.sex-f text,
+        &.sex-f rect {
+          fill: $color-f-b;
+        }
+        &.sex-m text,
+        &.sex-m rect {
+          fill: $color-m-b;
+        }
+      }
+    }
+
+    g.year-labels,
+    g.season-labels {
+      text {
+        fill: #333;
+      }
+    }
+
+    text {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+  }
+
+}
+
 #tree {
-
-  $color-f-a: #68d;
-  $color-m-a: #3c9;
-  $color-f-b: mix($color-f-a, white, 40%);
-  $color-m-b: mix($color-m-a, white, 40%);
-
-  position: relative;
 
   svg {
 
@@ -60,7 +122,7 @@ body {
       }
 
       circle {
-        fill: #fff;
+        fill: white;
         stroke-width: 2px;
       }
 
@@ -70,10 +132,10 @@ body {
         text-transform: uppercase;
         font-weight: bold;
         text-shadow:
-          -1px 0 0 #fff,
-          0 -1px 0 #fff,
-          0 1px 0 #fff,
-          1px 0 0 #fff;
+          -1px 0 0 white,
+          0 -1px 0 white,
+          0 1px 0 white,
+          1px 0 0 white;
       }
 
     }
