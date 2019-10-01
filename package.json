@@ -1,11 +1,11 @@
 {
-  "name": "wolley-player-timeline",
-  "productName": "Wolley Player Timeline",
+  "name": "wolley-history",
+  "productName": "Wolley History",
   "version": "0.1.0",
-  "description": "Tree diagram of Wolley CF players",
+  "description": "Visualizations of Wolley CF player history",
   "license": "UNLICENSED",
   "author": "Scott Thiessen (http://movingobjects.io)",
-  "homepage": "https://github.com/movingobjects/wolley-player-timeline#readme",
+  "homepage": "https://github.com/movingobjects/wolley-history#readme",
   "main": "src/entry.js",
   "scripts": {
     "dev": "export NODE_ENV=development&& webpack-dev-server --open --hot --mode development",
