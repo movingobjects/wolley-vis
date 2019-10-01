@@ -168,6 +168,10 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       {
+        from: 'src/include',
+        to: './resources/'
+      },
+      {
         from: 'node_modules/jquery/dist/jquery.' + (isDev ? 'slim' : 'slim.min') + '.js',
         to: './resources/externals/jquery/'
       },

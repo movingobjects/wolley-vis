@@ -2,6 +2,6 @@
 import 'd3-selection-multi';
 
 import style from './styles/style.scss';
-import Timeline from './Timeline.js';
+import PlayerTree from './PlayerTree.js';
 
-let timeline = new Timeline();
+let tree = new PlayerTree();

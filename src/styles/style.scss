@@ -1,24 +1,97 @@
-.node circle {
-  fill: #fff;
-  stroke: #999;
-  stroke-width: 2px;
+
+body {
+
+  margin: 50px;
+
+  font-size: 13px;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+
 }
 
-.node text {
+#tree {
 
-  font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-}
+  $color-f-a: #68d;
+  $color-m-a: #3c9;
+  $color-f-b: mix($color-f-a, white, 40%);
+  $color-m-b: mix($color-m-a, white, 40%);
 
-.node--internal text {
-  text-shadow:
-    0 1px 0 #fff,
-    0 -1px 0 #fff,
-    1px 0 0 #fff,
-    -1px 0 0 #fff;
-}
+  position: relative;
 
-.link {
-  fill: none;
-  stroke: #ddd;
-  stroke-width: 2px;
+  svg {
+
+    g.node {
+
+      &.current-team {
+        &.sex-f {
+          fill: $color-f-a;
+          circle {
+            fill: $color-f-a;
+          }
+        }
+        &.sex-m {
+          fill: $color-m-a;
+          circle {
+            fill: $color-m-a;
+          }
+        }
+      }
+
+      &:not(.current-team) {
+        &.sex-f {
+          fill: $color-f-b;
+          circle {
+            stroke: $color-f-b;
+          }
+        }
+        &.sex-m {
+          fill: $color-m-b;
+          circle {
+            stroke: $color-m-b;
+          }
+        }
+      }
+
+      circle {
+        fill: #fff;
+        stroke-width: 2px;
+      }
+
+
+      text {
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-shadow:
+          -1px 0 0 #fff,
+          0 -1px 0 #fff,
+          0 1px 0 #fff,
+          1px 0 0 #fff;
+      }
+
+    }
+
+    path.link {
+      fill: none;
+      opacity: 0.5;
+      stroke-width: 2px;
+
+      &.sex-f {
+        stroke: $color-f-b;
+      }
+      &.sex-m {
+        stroke: $color-m-b;
+      }
+
+    }
+
+  }
+
 }

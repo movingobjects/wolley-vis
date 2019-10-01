@@ -4,385 +4,392 @@
       "id": "adrienne",
       "name": "Adrienne Nova",
       "sex": "f",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": "maresa"
     },
     {
       "id": "alejandra",
       "name": "Alejandra Guzman",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/alejandra.jpg",
       "recruitedBy": "clare"
     },
     {
       "id": "alex",
       "name": "Alex Mersereau",
       "sex": "m",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": "clare"
     },
     {
       "id": "allison",
       "name": "Allison Gentry",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/allison.jpg",
       "recruitedBy": "chelsea"
     },
     {
       "id": "amber-b",
       "name": "Amber Banerjee",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/amber-b.jpg",
       "recruitedBy": null
     },
     {
       "id": "amber-w",
       "name": "Amber Wick",
       "sex": "f",
-      "currentTeam": true,
+      "image": "resources/images/amber-w.jpg",
       "recruitedBy": null
     },
     {
       "id": "andrew",
       "name": "Andrew Martinez",
       "sex": "m",
-      "currentTeam": false,
+      "image": "resources/images/andrew.jpg",
       "recruitedBy": "amber-b"
     },
     {
-      "id": "anna-d",
+      "id": "anna",
       "name": "Anna Doty",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/anna.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "annie-a",
       "name": "Annie Ayre",
       "sex": "f",
-      "currentTeam": true,
-      "recruitedBy": null
+      "image": "resources/images/annie-a.jpg",
+      "recruitedBy": "amber-w"
     },
     {
       "id": "annie-e",
       "name": "Annie Ellis",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/annie-e.jpg",
       "recruitedBy": "clare"
     },
     {
       "id": "armando",
       "name": "Armando Diaz Tolentino",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/armando.jpg",
       "recruitedBy": null
     },
     {
       "id": "ashley",
       "name": "Ashley McIntyre",
       "sex": "f",
-      "currentTeam": true,
+      "image": "resources/images/ashley.jpg",
       "recruitedBy": "andrew"
     },
     {
       "id": "brooke",
       "name": "Brooke Richey",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/brooke.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "cameron",
       "name": "Cameron Augsten",
       "sex": "m",
-      "currentTeam": false,
+      "image": "resources/images/cameron.jpg",
       "recruitedBy": "scott-t"
     },
     {
       "id": "candice",
       "name": "Candice Lampe",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/candice.jpg",
       "recruitedBy": "eli"
     },
     {
       "id": "carmela",
       "name": "Carmela Vallalta",
       "sex": "f",
-      "currentTeam": true,
+      "image": "resources/images/carmela.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "carolin",
       "name": "Carolin Rohe",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/carolin.jpg",
       "recruitedBy": "clare"
     },
     {
       "id": "chelsea",
       "name": "Chelsea Williamson",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/chelsea.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "christina",
       "name": "Christina Davis",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/christina.jpg",
       "recruitedBy": "ryan"
     },
     {
       "id": "clare",
       "name": "Clare Ellis",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/clare.jpg",
       "recruitedBy": "cameron"
     },
     {
       "id": "cody-f",
       "name": "Cody Fritts",
       "sex": "m",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": null
     },
     {
       "id": "cody-j",
       "name": "Cody Jackson",
       "sex": "m",
-      "currentTeam": false,
+      "image": "resources/images/cody-j.jpg",
       "recruitedBy": "clare"
     },
     {
       "id": "donald",
       "name": "Donald Birch",
       "sex": "m",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": null
     },
     {
       "id": "eli",
       "name": "Eli Hanna",
       "sex": "m",
-      "currentTeam": false,
+      "image": "resources/images/eli.jpg",
       "recruitedBy": "cameron"
     },
     {
       "id": "eric",
       "name": "Eric Wick",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/eric.jpg",
       "recruitedBy": "amber-w"
     },
     {
       "id": "eunice",
       "name": "Eunice Choi",
       "sex": "f",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": null
     },
     {
       "id": "evalynn",
       "name": "Evalynn Romano",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/evalynn.jpg",
       "recruitedBy": "hannah"
     },
     {
       "id": "hannah",
       "name": "Hannah Scholes",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/hannah.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "janna",
       "name": "Janna Krein",
       "sex": "f",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": "scott-t"
     },
     {
       "id": "jennifer",
       "name": "Jennifer Sonson",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/jennifer.jpg",
       "recruitedBy": "cody-f"
     },
     {
       "id": "jesse",
       "name": "Jesse Palek-Zahn",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/jesse.jpg",
       "recruitedBy": "allison"
     },
     {
       "id": "jordan",
       "name": "Jordan Olson",
       "sex": "m",
-      "currentTeam": false,
+      "image": null,
+      "recruitedBy": null
+    },
+    {
+      "id": "jonathan",
+      "name": "Jonathan Zhang",
+      "sex": "m",
+      "image": null,
       "recruitedBy": null
     },
     {
       "id": "kc",
       "name": "KC Burt",
       "sex": "f",
-      "currentTeam": true,
+      "image": "resources/images/kc.jpg",
       "recruitedBy": "andrew"
     },
     {
       "id": "kile",
       "name": "Kile Beaudry",
       "sex": "m",
-      "currentTeam": false,
+      "image": "resources/images/kile.jpg",
       "recruitedBy": "mandy"
     },
     {
       "id": "leah",
       "name": "Leah Ganis",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/leah.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "lynsey",
       "name": "Lynsey Gagnon",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/lynsey.jpg",
       "recruitedBy": "tyler"
     },
     {
       "id": "mackenzie",
       "name": "Mackenzie Waples",
       "sex": "f",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": "andrew"
     },
     {
       "id": "mandy",
-      "name": "Mandy LaRoque",
+      "name": "Mandy Beaudry",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/mandy.jpg",
       "recruitedBy": "ryan"
     },
     {
       "id": "maresa",
       "name": "Maresa Edwards",
       "sex": "f",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": null
     },
     {
       "id": "margaret",
       "name": "Margaret Du",
       "sex": "f",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": null
     },
     {
       "id": "martha",
       "name": "Martha Caldwell",
       "sex": "f",
-      "currentTeam": true,
+      "image": "resources/images/martha.jpg",
       "recruitedBy": "alejandra"
     },
     {
       "id": "molly-a",
       "name": "Molly Ayre-Svingen",
       "sex": "f",
-      "currentTeam": true,
+      "image": "resources/images/molly-a.jpg",
       "recruitedBy": "annie-a"
     },
     {
       "id": "molly-m",
       "name": "Molly Melbye",
       "sex": "f",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": null
     },
     {
       "id": "neal",
       "name": "Neal Kawas",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/neal.jpg",
       "recruitedBy": null
     },
     {
-      "id": "paige-s",
+      "id": "paige",
       "name": "Paige Saffell",
       "sex": "f",
-      "currentTeam": false,
+      "image": "resources/images/paige.jpg",
       "recruitedBy": "mandy"
     },
     {
       "id": "paul",
       "name": "Paul Allen",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/paul.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "peter",
       "name": "Peter Liang",
       "sex": "m",
-      "currentTeam": false,
+      "image": "resources/images/peter.jpg",
       "recruitedBy": null
     },
     {
       "id": "rachel",
       "name": "Rachel Krebs",
       "sex": "f",
-      "currentTeam": true,
+      "image": "resources/images/rachel.jpg",
       "recruitedBy": "andrew"
     },
     {
       "id": "robert",
       "name": "Robert Sherer",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/robert.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "ryan",
       "name": "Ryan Davis",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/ryan.jpg",
       "recruitedBy": null
     },
     {
       "id": "sarah",
       "name": "Sarah Gannon",
       "sex": "f",
-      "currentTeam": true,
+      "image": "resources/images/sarah.jpg",
       "recruitedBy": "scott-t"
     },
     {
       "id": "scott-f",
       "name": "Scott Fletcher",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/scott-f.jpg",
       "recruitedBy": "andrew"
     },
     {
       "id": "scott-t",
       "name": "Scott Thiessen",
       "sex": "m",
-      "currentTeam": true,
+      "image": "resources/images/scott-t.jpg",
       "recruitedBy": null
     },
     {
       "id": "shom",
       "name": "Shom Banerjee",
       "sex": "m",
-      "currentTeam": false,
+      "image": null,
       "recruitedBy": "amber-b"
     },
     {
       "id": "tyler",
       "name": "Tyler Engstrom",
       "sex": "m",
-      "currentTeam": false,
+      "image": "resources/images/tyler.jpg",
       "recruitedBy": null
     }
   ],
@@ -397,6 +404,7 @@
         "cody-f",
         "donald",
         "eunice",
+        "jonathan",
         "jordan",
         "maresa",
         "margaret",
@@ -419,6 +427,7 @@
         "cody-f",
         "donald",
         "eunice",
+        "jonathan",
         "jordan",
         "maresa",
         "margaret",
@@ -604,7 +613,7 @@
         "leah",
         "mandy",
         "neal",
-        "paige-s",
+        "paige",
         "paul",
         "robert",
         "ryan",
@@ -630,7 +639,7 @@
         "hannah",
         "leah",
         "neal",
-        "paige-s",
+        "paige",
         "paul",
         "robert",
         "ryan",
@@ -706,7 +715,7 @@
         "lynsey",
         "mandy",
         "neal",
-        "paige-s",
+        "paige",
         "paul",
         "ryan",
         "scott-f",
@@ -729,7 +738,7 @@
         "lynsey",
         "mandy",
         "neal",
-        "paige-s",
+        "paige",
         "paul",
         "robert",
         "ryan",
@@ -864,7 +873,7 @@
       "players": [
         "amber-w",
         "andrew",
-        "anna-d",
+        "anna",
         "annie-a",
         "armando",
         "ashley",
@@ -890,7 +899,7 @@
       "name": "Summer 2019",
       "players": [
         "amber-w",
-        "anna-d",
+        "anna",
         "annie-a",
         "armando",
         "ashley",
@@ -935,6 +944,5 @@
         "scott-t"
       ]
     }
-
   ]
 }
