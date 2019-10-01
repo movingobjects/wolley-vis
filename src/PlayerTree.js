@@ -2,14 +2,14 @@
 import * as d3 from 'd3';
 import data from './data/data.json';
 
-const TREE_W = 1200,
+const TREE_W = 1875,
       TREE_H = 750;
 
 const TREE_MARGIN = {
   top: 0,
-  right: 150,
+  right: 300,
   bottom: 0,
-  left: 100
+  left: 200
 };
 
 export default class PlayerTree {

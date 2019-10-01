@@ -117,9 +117,11 @@ export default class SeasonTimeline {
 
     this.players.forEach((player, i) => {
 
+      let onCurrentTeam = this.isCurrentTeam(player);
+
       let row = g.append('g')
         .classed('row', true)
-        .classed('current-team', this.isCurrentTeam(player))
+        .classed('current-team', onCurrentTeam)
         .classed('sex-f', player.sex === 'f')
         .classed('sex-m', player.sex === 'm')
         .styles({
