@@ -1,14 +1,15 @@
 
-$color-f-a: #68d;
-$color-m-a: #3c9;
-$color-f-b: mix($color-f-a, white, 40%);
-$color-m-b: mix($color-m-a, white, 40%);
+$color-vis-bg: #f6f6f6;
+
+$color-f-a: #87c;
+$color-m-a: #38c;
+$color-f-b: mix($color-f-a, $color-vis-bg, 40%);
+$color-m-b: mix($color-m-a, $color-vis-bg, 40%);
 
 body {
+  margin: 0;
+  padding: 0;
 
-  margin: 50px;
-
-  font-size: 12px;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -21,137 +22,187 @@ body {
 
 }
 
-#timeline {
-  margin-bottom: 100px;
+header {
+  margin-top: 50px;
+  text-align: center;
+  background-color: #fe0;
 
-  div.controls {
-    display: inline-block;
-    border-radius: 5px;
-    padding: 15px;
-    background-color: #f6f9f9;
-    margin-bottom: 25px;
-
-    p {
-      display: inline-block;
-      margin: 0;
-
-      & + p {
-        margin-left: 15px;
-      }
-
-    }
-
+  h1 {
+    margin: 0 auto;
+    font: 0/0 x;
+    color: transparent;
+    width: 200px;
+    height: 150px;
+    background-image: url('../images/wolley-logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
-  svg {
-
-    g.row {
-      &.current-team {
-        &.sex-f text,
-        &.sex-f rect {
-          fill: $color-f-a;
-        }
-        &.sex-m text,
-        &.sex-m rect {
-          fill: $color-m-a;
-        }
-      }
-      &:not(.current-team) {
-        opacity: 0.5;
-        &.sex-f text,
-        &.sex-f rect {
-          fill: $color-f-b;
-        }
-        &.sex-m text,
-        &.sex-m rect {
-          fill: $color-m-b;
-        }
-      }
-    }
-
-    g.year-labels,
-    g.season-labels {
-      text {
-        fill: #333;
-      }
-    }
-
-    text {
-      font-size: 11px;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-  }
+  display: none; // TODO
 
 }
 
-#tree {
+section {
   margin-bottom: 100px;
+  overflow-x: hidden;
 
-  svg {
+  h2 {
+    text-align: center;
+  }
 
-    g.node {
+  div.controls {
+    font-size: 12px;
+    padding: 25px;
+    background: #ccc;
+  }
 
-      &.current-team {
-        &.sex-f {
-          fill: $color-f-a;
-          circle {
+  div.wrap-vis {
+    padding: 50px 25px;
+    background-color: $color-vis-bg;
+
+    svg {
+      display: block;
+      margin: 0 auto;
+    }
+
+  }
+
+  &#timeline {
+
+    div.wrap-vis {
+      div.wrap-names {
+        position: absolute;
+        background-color: $color-vis-bg;
+      }
+      div.wrap-timeline {
+        margin-left: 200px;
+        overflow-x: scroll;
+      }
+    }
+
+    svg {
+
+      display: inline-block;
+
+      g.row {
+        &.current-team {
+          &.sex-f text,
+          &.sex-f rect {
             fill: $color-f-a;
           }
-        }
-        &.sex-m {
-          fill: $color-m-a;
-          circle {
+          &.sex-m text,
+          &.sex-m rect {
             fill: $color-m-a;
           }
         }
-      }
-
-      &:not(.current-team) {
-        &.sex-f {
-          fill: $color-f-b;
-          circle {
-            stroke: $color-f-b;
+        &:not(.current-team) {
+          opacity: 0.5;
+          &.sex-f text,
+          &.sex-f rect {
+            fill: $color-f-b;
           }
-        }
-        &.sex-m {
-          fill: $color-m-b;
-          circle {
-            stroke: $color-m-b;
+          &.sex-m text,
+          &.sex-m rect {
+            fill: $color-m-b;
           }
         }
       }
 
-      circle {
-        fill: white;
-        stroke-width: 2px;
+      g.season-bgs rect {
+        fill: #fcfcfc;
       }
 
+      g.year-labels,
+      g.season-labels {
+        text {
+          fill: mix(#333, $color-f-a, 50%);
+          &.alt {
+            fill: mix(#333, $color-m-a, 50%);
+          }
+        }
+      }
 
       text {
         font-size: 11px;
         text-transform: uppercase;
         font-weight: bold;
-        text-shadow:
-          -1px 0 0 white,
-          0 -1px 0 white,
-          0 1px 0 white,
-          1px 0 0 white;
       }
 
     }
 
-    path.link {
-      fill: none;
-      opacity: 0.5;
-      stroke-width: 2px;
+  }
 
-      &.sex-f {
-        stroke: $color-f-b;
+  &#tree {
+
+    div.wrap-vis {
+      overflow-x: scroll;
+    }
+
+    svg {
+
+      g.node {
+
+        &.current-team {
+          &.sex-f {
+            fill: $color-f-a;
+            circle {
+              fill: $color-f-a;
+            }
+          }
+          &.sex-m {
+            fill: $color-m-a;
+            circle {
+              fill: $color-m-a;
+            }
+          }
+        }
+
+        &:not(.current-team) {
+          &.sex-f {
+            fill: $color-f-b;
+            circle {
+              stroke: $color-f-b;
+            }
+          }
+          &.sex-m {
+            fill: $color-m-b;
+            circle {
+              stroke: $color-m-b;
+            }
+          }
+        }
+
+        circle {
+          fill: white;
+          stroke-width: 2px;
+        }
+
+
+        text {
+          font-size: 11px;
+          text-transform: uppercase;
+          font-weight: bold;
+          text-shadow:
+            -1px 0 0 white,
+            0 -1px 0 white,
+            0 1px 0 white,
+            1px 0 0 white;
+        }
+
       }
-      &.sex-m {
-        stroke: $color-m-b;
+
+      path.link {
+        fill: none;
+        opacity: 0.5;
+        stroke-width: 2px;
+
+        &.sex-f {
+          stroke: $color-f-b;
+        }
+        &.sex-m {
+          stroke: $color-m-b;
+        }
+
       }
 
     }

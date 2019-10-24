@@ -2,10 +2,10 @@
 import * as d3 from 'd3';
 import data from './data/data.json';
 
-const TREE_W = 1875,
-      TREE_H = 750;
+const SVG_W = 1875,
+      SVG_H = 750;
 
-const TREE_MARGIN = {
+const SVG_MARGIN = {
   top: 0,
   right: 300,
   bottom: 0,
@@ -49,18 +49,18 @@ export default class PlayerTree {
 
     const tree = d3.tree()
       .size([
-        TREE_H - TREE_MARGIN.top - TREE_MARGIN.bottom,
-        TREE_W - TREE_MARGIN.left - TREE_MARGIN.right
+        SVG_H - SVG_MARGIN.top - SVG_MARGIN.bottom,
+        SVG_W - SVG_MARGIN.left - SVG_MARGIN.right
       ]);
 
     let nodes = tree(d3.hierarchy(treeData, (d) => d.children));
 
-    const svg = d3.select('#tree').append('svg')
-      .attr('width', TREE_W)
-      .attr('height', TREE_H);
+    const svg = d3.select('#tree div.wrap-vis').append('svg')
+      .attr('width', SVG_W)
+      .attr('height', SVG_H);
 
     const g = svg.append('g')
-      .attr('transform', `translate(${TREE_MARGIN.left}, ${TREE_MARGIN.top})`);
+      .attr('transform', `translate(${SVG_MARGIN.left}, ${SVG_MARGIN.top})`);
 
     var link = g.selectAll('.link')
       .data(nodes.descendants().slice(1))

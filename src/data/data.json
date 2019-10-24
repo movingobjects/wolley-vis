@@ -173,7 +173,7 @@
       "name": "Eric Wick",
       "sex": "m",
       "image": "resources/images/eric.jpg",
-      "recruitedBy": "amber-w"
+      "recruitedBy": "ryan"
     },
     {
       "id": "eunice",
@@ -271,7 +271,7 @@
       "name": "Mandy Beaudry",
       "sex": "f",
       "image": "resources/images/mandy.jpg",
-      "recruitedBy": "ryan"
+      "recruitedBy": "amber-w"
     },
     {
       "id": "maresa",
