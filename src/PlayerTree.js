@@ -2,48 +2,55 @@
 import * as d3 from 'd3';
 import data from './data/data.json';
 
-const SVG_W = 1875,
-      SVG_H = 750;
-
-const SVG_MARGIN = {
-  top: 0,
-  right: 300,
-  bottom: 0,
-  left: 200
-};
-
 export default class PlayerTree {
 
   constructor() {
 
+    this.sortBy               = 'sort-name';
+    this.highlightCurrentTeam = false;
+
     this.players = data.players;
     this.seasons = data.seasons;
 
-    this.players.sort((a, b) => a.name - b.name);
     this.seasons.sort((a, b) => a.year - b.year);
 
-    this.generateTree();
+    this.processPlayersData();
+    this.reset();
 
   }
 
-  toTreeData(players) {
+  reset() {
 
-    const getRecruitedBy = (id) => players
-      .filter((player) => player.recruitedBy === id)
-      .map((player) => ({
-        ...player,
-        children: getRecruitedBy(player.id)
-      }));
+    d3.select('#tree').selectAll('svg').remove();
 
-    return {
-      name: 'Wolley CF',
-      currentTeam: true,
-      children: getRecruitedBy(null)
-    }
+    this.players.sort((a, b) => {
+
+      switch (this.sortBy) {
+        case 'sort-count': return (b.seasonCount - a.seasonCount) || (a.firstSeason - b.firstSeason) || ('' + a.name).localeCompare(b.name);
+        case 'sort-start': return (a.firstSeason - b.firstSeason) || (b.seasonCount - a.seasonCount) || ('' + a.name).localeCompare(b.name);
+        case 'sort-invited': return (b.childCount - a.childCount) || ('' + a.name).localeCompare(b.name);
+        case 'sort-invited-current': return (b.childCountCurrent - a.childCountCurrent) || ('' + a.name).localeCompare(b.name);
+        default: return (`${a.name}`).localeCompare(b.name);
+      }
+
+    });
+
+    this.initVis();
+    this.initControls();
 
   }
 
-  generateTree() {
+  initVis() {
+
+    const SVG_W = 1600,
+          SVG_H = 750;
+
+    const SVG_MARGIN = {
+      top: 0,
+      right: 200,
+      bottom: 0,
+      left: 125
+    };
 
     const treeData = this.toTreeData(this.players);
 
@@ -74,14 +81,14 @@ export default class PlayerTree {
       .data(nodes.descendants())
       .enter().append('g')
         .classed('node', true)
-        .classed('current-team', (d) => this.isCurrentTeam(d.data))
+        .classed('highlighted', (d) => this.isHighlighted(d.data))
         .classed('has-children', (d) => d.data.children && d.data.children.length)
         .classed('sex-f', (d) => d.data.sex === 'f')
         .classed('sex-m', (d) => d.data.sex === 'm')
         .attr('transform', (d) => `translate(${d.y}, ${d.x})`);
 
     node.append('circle')
-      .attr('r', (d) => this.isCurrentTeam(d.data) ? 5 : 3);
+      .attr('r', (d) => this.isHighlighted(d.data) ? 5 : 3);
 
     node.append('text')
       .attrs({
@@ -90,6 +97,100 @@ export default class PlayerTree {
         'text-anchor': (d, i) => (i === 0) ? 'end' : 'start'
       })
       .text((d) => d.data.name);
+
+  }
+  initControls() {
+
+    let checkboxCurrentTeam = d3.select('#tree-checkbox-highlight-current-team'),
+        selectSort          = d3.select('#tree-select-sort');
+
+    checkboxCurrentTeam.property('checked', this.highlightCurrentTeam);
+    selectSort.property('value', this.sortBy);
+
+    checkboxCurrentTeam.on('change', () => {
+      this.highlightCurrentTeam = checkboxCurrentTeam.property('checked');
+      this.reset();
+    });
+
+    selectSort.on('change', () => {
+      this.sortBy = selectSort.node().value;
+      this.reset();
+    });
+
+  }
+
+  isHighlighted(player) {
+
+    if (!this.highlightCurrentTeam) return true;
+
+    return this.isCurrentTeam(player);
+
+  }
+  isCurrentTeam(player) {
+
+    const currentSeason = this.seasons[this.seasons.length - 1];
+
+    return currentSeason.players.includes(player.id);
+
+  }
+
+  processPlayersData() {
+
+    const applyChildCounts = (player) => {
+
+      if (player.id) {
+
+        const p = this.players.find((p) => p.id === player.id);
+
+        if (p) {
+          p.childCount        = this.countChildren(player, false);
+          p.childCountCurrent = this.countChildren(player, true);
+        }
+
+      }
+
+      if (player.children) {
+        player.children.forEach((p) => applyChildCounts(p));
+      }
+
+    }
+
+    applyChildCounts(this.toTreeData(this.players));
+
+    this.players.forEach((player) => {
+
+      let count = 0;
+
+      this.seasons.forEach((season) => {
+        if (season.players.includes(player.id)) {
+          count++;
+
+          if (!player.firstSeason) {
+            player.firstSeason = season.id;
+          }
+
+        }
+      })
+
+      player.seasonCount = count;
+
+    });
+
+  }
+  toTreeData(players) {
+
+    const getRecruitedBy = (id) => players
+      .filter((player) => player.recruitedBy === id)
+      .map((player) => ({
+        ...player,
+        children: getRecruitedBy(player.id)
+      }));
+
+    return {
+      name: 'Wolley CF',
+      currentTeam: true,
+      children: getRecruitedBy(null)
+    }
 
   }
 
@@ -107,14 +208,6 @@ export default class PlayerTree {
     })
 
     return count;
-
-  }
-
-  isCurrentTeam(player) {
-
-    const currentSeason = this.seasons[this.seasons.length - 1];
-
-    return currentSeason.players.includes(player.id);
 
   }
 

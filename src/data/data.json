@@ -106,6 +106,13 @@
       "recruitedBy": "eli"
     },
     {
+      "id": "carlos",
+      "name": "Carlos Romo",
+      "sex": "m",
+      "image": "resources/images/carlos.jpg",
+      "recruitedBy": "eric"
+    },
+    {
       "id": "carmela",
       "name": "Carmela Vallalta",
       "sex": "f",
@@ -950,6 +957,32 @@
         "annie-a",
         "armando",
         "ashley",
+        "carmela",
+        "eric",
+        "jesse",
+        "kc",
+        "martha",
+        "molly-a",
+        "neal",
+        "paul",
+        "rachel",
+        "robert",
+        "ryan",
+        "sarah",
+        "scott-f",
+        "scott-t"
+      ]
+    },
+    {
+      "id": "2020.1",
+      "year": "2020",
+      "season": "Winter",
+      "players": [
+        "amber-w",
+        "annie-a",
+        "armando",
+        "ashley",
+        "carlos",
         "carmela",
         "eric",
         "jesse",

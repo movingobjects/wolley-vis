@@ -31,7 +31,7 @@ export default class SeasonTimeline {
 
       player.seasonCount = count;
 
-    })
+    });
 
     this.reset();
 
@@ -52,12 +52,12 @@ export default class SeasonTimeline {
 
     });
 
-    this.addVis();
-    this.addControls();
+    this.initVis();
+    this.initControls();
 
   }
 
-  addVis() {
+  initVis() {
 
     const totalH    = 70 + (this.players.length * 20),
           namesW    = 200,
@@ -173,10 +173,10 @@ export default class SeasonTimeline {
     });
 
   }
-  addControls() {
+  initControls() {
 
-    let checkboxCurrentTeam = d3.select('#checkbox-highlight-current-team'),
-        selectSort          = d3.select('#select-sort');
+    let checkboxCurrentTeam = d3.select('#timeline-checkbox-highlight-current-team'),
+        selectSort          = d3.select('#timeline-select-sort');
 
     checkboxCurrentTeam.property('checked', this.highlightCurrentTeam);
     selectSort.property('value', this.sortBy);

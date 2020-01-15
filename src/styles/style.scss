@@ -3,8 +3,8 @@ $color-vis-bg: #f6f6f6;
 
 $color-f-a: #87c;
 $color-m-a: #38c;
-$color-f-b: mix($color-f-a, $color-vis-bg, 40%);
-$color-m-b: mix($color-m-a, $color-vis-bg, 40%);
+$color-f-b: mix($color-f-a, $color-vis-bg, 30%);
+$color-m-b: mix($color-m-a, $color-vis-bg, 30%);
 
 body {
   margin: 0;
@@ -96,7 +96,6 @@ section {
           }
         }
         &:not(.current-team) {
-          opacity: 0.5;
           &.sex-f text,
           &.sex-f rect {
             fill: $color-f-b;
@@ -142,7 +141,7 @@ section {
 
       g.node {
 
-        &.current-team {
+        &.highlighted {
           &.sex-f {
             fill: $color-f-a;
             circle {
@@ -155,9 +154,16 @@ section {
               fill: $color-m-a;
             }
           }
+          text {
+            text-shadow:
+              -1px 0 0 white,
+              0 -1px 0 white,
+              0 1px 0 white,
+              1px 0 0 white;
+          }
         }
 
-        &:not(.current-team) {
+        &:not(.highlighted) {
           &.sex-f {
             fill: $color-f-b;
             circle {
@@ -177,16 +183,10 @@ section {
           stroke-width: 2px;
         }
 
-
         text {
           font-size: 11px;
           text-transform: uppercase;
           font-weight: bold;
-          text-shadow:
-            -1px 0 0 white,
-            0 -1px 0 white,
-            0 1px 0 white,
-            1px 0 0 white;
         }
 
       }
