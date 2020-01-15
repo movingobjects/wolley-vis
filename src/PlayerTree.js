@@ -144,7 +144,7 @@ export default class PlayerTree {
 
         if (p) {
           p.childCount        = this.countChildren(player, false);
-          p.childCountCurrent = this.countChildren(player, true);
+          p.childCountCurrent = this.countChildren(player, true) + (this.isCurrentTeam(p) ? 1 : 0);
         }
 
       }
