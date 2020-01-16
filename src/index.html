@@ -12,8 +12,41 @@
 
       <div class="wrap">
 
-        <h1>Wolley CF</h1>
-        <h2>Player History Visualizations</h2>
+        <div class="title">
+          <h1>Wolley CF</h1>
+          <h2>Player History Visualizations</h2>
+        </div>
+
+        <div class="filters">
+
+          <p>
+            <label for="select-vis">Visualization</label>
+            <br>
+            <select id="select-vis">
+              <option>Seasons Timeline</option>
+              <option>Player Invite Tree</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="select-sort">Sort by</label>
+            <br>
+            <select id="select-sort">
+              <option value="sort-name">Name</option>
+              <option value="sort-invited">Invited Count</option>
+              <option value="sort-invited-current">Current Team Invited Count</option>
+              <option value="sort-count">Season Count</option>
+              <option value="sort-start">Season Start</option>
+            </select>
+          </p>
+
+          <p>
+            <br>
+            <input type="checkbox" id="checkbox-highlight-current-team">
+            <label for="checkbox-highlight-current-team">Highlight current team</label>
+          </p>
+
+        </div>
 
       </div>
 
@@ -22,52 +55,14 @@
     <main>
 
       <section id="timeline">
-
-        <h2>Season Timeline</h2>
-
-        <div class="controls">
-
-          <input type="checkbox" id="timeline-checkbox-highlight-current-team">
-          <label for="timeline-checkbox-highlight-current-team">Highlight current team</label>
-
-          <label for="timeline-select-sort">Sort by</label>
-          <select id="timeline-select-sort">
-            <option value="sort-name">Name</option>
-            <option value="sort-count">Season Count</option>
-            <option value="sort-start">Season Start</option>
-          </select>
-
-        </div>
-
         <div class="wrap-vis">
           <div class="wrap-names"></div>
           <div class="wrap-timeline"></div>
         </div>
-
       </section>
 
       <section id="tree">
-
-        <h2>Player Tree</h2>
-
-        <div class="controls">
-
-          <input type="checkbox" id="tree-checkbox-highlight-current-team">
-          <label for="tree-checkbox-highlight-current-team">Highlight current team</label>
-
-          <label for="tree-select-sort">Sort by</label>
-          <select id="tree-select-sort">
-            <option value="sort-name">Name</option>
-            <option value="sort-invited">Invited Count</option>
-            <option value="sort-invited-current">Current Team Invited Count</option>
-            <option value="sort-count">Season Count</option>
-            <option value="sort-start">Season Start</option>
-          </select>
-
-        </div>
-
         <div class="wrap-vis"></div>
-
       </section>
 
     </main>

@@ -9,6 +9,7 @@ $color-m-b: mix($color-m-a, $color-vis-bg, 30%);
 body {
   margin: 0;
   padding: 0;
+  background-color: $color-vis-bg;
 
   font-family:
     -apple-system,
@@ -23,22 +24,51 @@ body {
 }
 
 header {
-  margin-top: 50px;
-  text-align: center;
-  background-color: #fe0;
+  background: black;
+  padding: 25px 0 25px 0;
 
-  h1 {
+  div.wrap {
+    width: 1200px;
     margin: 0 auto;
-    font: 0/0 x;
-    color: transparent;
-    width: 200px;
-    height: 150px;
-    background-image: url('../images/wolley-logo.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+    display: flex;
+
+    div {
+
+      &.title {
+        flex-basis: 350px;
+      }
+      &.filters {
+        display: flex;
+        color: #999;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        #select-vis {
+          width: 200px;
+        }
+
+        & > p {
+          margin: 0 30px 0 0;
+          line-height: 20px;
+        }
+
+      }
+    }
+
   }
 
-  display: none; // TODO
+  h1 {
+    font-size: 16px;
+    color: white;
+    margin: 0 0 5px 0;
+  }
+
+  h2 {
+    font-size: 16px;
+    color: #999;
+    margin: 0;
+  }
 
 }
 
