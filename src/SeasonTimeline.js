@@ -2,12 +2,13 @@
 import * as d3 from 'd3';
 import data from './data/data.json';
 
-export default class SeasonTimeline {
+import Vis from './Vis';
+
+export default class SeasonTimeline extends Vis {
 
   constructor() {
 
-    this.sortBy               = 'sort-name';
-    this.highlightCurrentTeam = false;
+    super();
 
     this.players = data.players;
     this.seasons = data.seasons;
@@ -35,7 +36,6 @@ export default class SeasonTimeline {
 
     this.reset();
 
-
   }
 
   reset() {
@@ -53,7 +53,6 @@ export default class SeasonTimeline {
     });
 
     this.initVis();
-    this.initControls();
 
   }
 
@@ -170,25 +169,6 @@ export default class SeasonTimeline {
       });
 
 
-    });
-
-  }
-  initControls() {
-
-    let checkboxCurrentTeam = d3.select('#timeline-checkbox-highlight-current-team'),
-        selectSort          = d3.select('#timeline-select-sort');
-
-    checkboxCurrentTeam.property('checked', this.highlightCurrentTeam);
-    selectSort.property('value', this.sortBy);
-
-    checkboxCurrentTeam.on('change', () => {
-      this.highlightCurrentTeam = checkboxCurrentTeam.property('checked');
-      this.reset();
-    });
-
-    selectSort.on('change', () => {
-      this.sortBy = selectSort.node().value;
-      this.reset();
     });
 
   }

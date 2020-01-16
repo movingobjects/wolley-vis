@@ -2,12 +2,13 @@
 import * as d3 from 'd3';
 import data from './data/data.json';
 
-export default class PlayerTree {
+import Vis from './Vis';
+
+export default class PlayerTree extends Vis {
 
   constructor() {
 
-    this.sortBy               = 'sort-name';
-    this.highlightCurrentTeam = false;
+    super();
 
     this.players = data.players;
     this.seasons = data.seasons;
@@ -28,15 +29,14 @@ export default class PlayerTree {
       switch (this.sortBy) {
         case 'sort-count': return (b.seasonCount - a.seasonCount) || (a.firstSeason - b.firstSeason) || ('' + a.name).localeCompare(b.name);
         case 'sort-start': return (a.firstSeason - b.firstSeason) || (b.seasonCount - a.seasonCount) || ('' + a.name).localeCompare(b.name);
-        case 'sort-invited': return (b.childCount - a.childCount) || ('' + a.name).localeCompare(b.name);
-        case 'sort-invited-current': return (b.childCountCurrent - a.childCountCurrent) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruits': return (b.childCount - a.childCount) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruits-current': return (b.childCountCurrent - a.childCountCurrent) || ('' + a.name).localeCompare(b.name);
         default: return (`${a.name}`).localeCompare(b.name);
       }
 
     });
 
     this.initVis();
-    this.initControls();
 
   }
 
@@ -97,25 +97,6 @@ export default class PlayerTree {
         'text-anchor': (d, i) => (i === 0) ? 'end' : 'start'
       })
       .text((d) => d.data.name);
-
-  }
-  initControls() {
-
-    let checkboxCurrentTeam = d3.select('#tree-checkbox-highlight-current-team'),
-        selectSort          = d3.select('#tree-select-sort');
-
-    checkboxCurrentTeam.property('checked', this.highlightCurrentTeam);
-    selectSort.property('value', this.sortBy);
-
-    checkboxCurrentTeam.on('change', () => {
-      this.highlightCurrentTeam = checkboxCurrentTeam.property('checked');
-      this.reset();
-    });
-
-    selectSort.on('change', () => {
-      this.sortBy = selectSort.node().value;
-      this.reset();
-    });
 
   }
 
