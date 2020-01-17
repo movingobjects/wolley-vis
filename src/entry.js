@@ -19,9 +19,7 @@ const sortOptions = {
   tree: [
     { value: 'sort-name', label: 'Name' },
     { value: 'sort-recruits', label: '# of Recruits' },
-    { value: 'sort-recruits-current', label: '# of Recruits (Current Team)' },
-    { value: 'sort-count', label: '# of Seasons' },
-    { value: 'sort-start', label: 'First Season' }
+    { value: 'sort-recruits-current', label: '# of Recruits (Current Team)' }
   ]
 }
 
