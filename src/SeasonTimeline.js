@@ -74,7 +74,7 @@ export default class SeasonTimeline extends Vis {
 
       let row = svgNames.append('g')
         .classed('row', true)
-        .classed('current-team', onCurrentTeam)
+        .classed('highlighted', onCurrentTeam)
         .classed('sex-f', player.sex === 'f')
         .classed('sex-m', player.sex === 'm')
         .styles({
@@ -87,7 +87,9 @@ export default class SeasonTimeline extends Vis {
           'text-anchor': 'end',
           'x': 190
         })
-        .text(player.name);
+        .text(player.name)
+        .on('mouseover', (d, i) => this.showPlayerTooltip(player))
+        .on('mouseout', (d, i) => this.hidePlayerTooltip());
 
     });
 
@@ -142,12 +144,15 @@ export default class SeasonTimeline extends Vis {
 
       let row = svgTimeline.append('g')
         .classed('row', true)
-        .classed('current-team', onCurrentTeam)
+        .classed('highlighted', onCurrentTeam)
         .classed('sex-f', player.sex === 'f')
         .classed('sex-m', player.sex === 'm')
         .styles({
           'transform': `translate(0px, ${60 + (i * 20)}px)`
-        });
+        })
+        .on('mouseover', (d, i) => this.showPlayerTooltip(player))
+        .on('mouseout', (d, i) => this.hidePlayerTooltip());
+
 
       this.seasons.forEach((season, j) => {
 
@@ -180,6 +185,76 @@ export default class SeasonTimeline extends Vis {
     const currentSeason = this.seasons[this.seasons.length - 1];
 
     return currentSeason.players.includes(player.id);
+
+  }
+
+  showPlayerTooltip(player) {
+
+    document.addEventListener('mousemove', this.onTooltipMouseMove);
+
+    const tooltip = d3.select('#tooltip');
+
+    tooltip
+      .classed('on', true)
+      .html('');
+
+    if (player.image) {
+      tooltip.append('img')
+        .attr('src', player.image);
+    }
+
+    tooltip.append('h3')
+      .text(player.name);
+
+    const table = tooltip.append('table');
+
+    const addRow = (textLeft, textRight) => {
+      const tr = table.append('tr');
+
+      if (textRight) {
+        tr.append('td').text(textLeft);
+        tr.append('td').text(textRight);
+      } else {
+        tr.append('td')
+          .text(textLeft)
+          .attr('colspan', 2);
+      }
+
+    }
+
+    const getPlayerName = (playerId) => {
+      const player = this.players.find((p) => p.id === playerId);
+      return player ? player.name : 'Unknown';
+    }
+
+    if (player.firstSeason === '2014.3') {
+      addRow('OG member');
+    }
+
+    if (player.recruitedBy) {
+      addRow('Recruiter', getPlayerName(player.recruitedBy));
+    }
+    addRow('Joined', player.firstSeason);
+    addRow('Seasons', player.seasonCount);
+
+  }
+  hidePlayerTooltip() {
+
+    document.removeEventListener('mousemove', this.onTooltipMouseMove);
+
+    d3.select('#tooltip')
+      .classed('on', false);
+
+  }
+
+  onTooltipMouseMove = (e) => {
+
+    d3.select('#tooltip')
+      .styles({
+        left: `${e.pageX}px`,
+        top: `${e.pageY - 15}px`
+      });
+
 
   }
 

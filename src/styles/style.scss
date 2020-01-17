@@ -121,7 +121,7 @@ section {
       display: inline-block;
 
       g.row {
-        &.current-team {
+        &.highlighted {
           &.sex-f text,
           &.sex-f rect {
             fill: $color-f-a;
@@ -131,7 +131,8 @@ section {
             fill: $color-m-a;
           }
         }
-        &:not(.current-team) {
+        &:not(.highlighted) {
+          pointer-events: none;
           &.sex-f text,
           &.sex-f rect {
             fill: $color-f-b;
@@ -161,6 +162,7 @@ section {
         font-size: 11px;
         text-transform: uppercase;
         font-weight: bold;
+        cursor: default;
       }
 
     }
@@ -200,6 +202,7 @@ section {
         }
 
         &:not(.highlighted) {
+          pointer-events: none;
           &.sex-f {
             fill: $color-f-b;
             circle {
@@ -244,5 +247,55 @@ section {
     }
 
   }
+
+}
+
+#tooltip {
+  opacity: 0;
+  pointer-events: none;
+
+  width: 150px;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transform: translate(-50%, -100%);
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.1);
+
+  transition:
+    opacity 0.3s ease 0.2s;
+
+  &.on {
+    opacity: 1;
+    transition:
+      opacity 0.2s ease;
+  }
+
+  h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  table,
+  tr,
+  td {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+
+  table {
+    width: 100%;
+    td:last-child {
+      font-weight: bold;
+    }
+  }
+
 
 }
