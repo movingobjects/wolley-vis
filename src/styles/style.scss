@@ -1,10 +1,12 @@
 
 $color-vis-bg: #f6f6f6;
 
-$color-f-a: #87c;
-$color-m-a: #38c;
+$color-f-a: #3c9;
+$color-m-a: #39c;
 $color-f-b: mix($color-f-a, $color-vis-bg, 30%);
 $color-m-b: mix($color-m-a, $color-vis-bg, 30%);
+
+$color-selected: #96f;
 
 body {
   margin: 0;
@@ -120,15 +122,23 @@ section {
 
       display: inline-block;
 
+      g.row.selected text,
+      g.row.selected rect {
+        fill: $color-selected !important;
+      }
+
       g.row {
         &.highlighted {
+
           &.sex-f text,
           &.sex-f rect {
             fill: $color-f-a;
+            cursor: pointer;
           }
           &.sex-m text,
           &.sex-m rect {
             fill: $color-m-a;
+            cursor: pointer;
           }
         }
         &:not(.highlighted) {
@@ -266,7 +276,7 @@ section {
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.1);
 
   transition:
-    opacity 0.3s ease 0.2s;
+    opacity 0.3s ease 0.1s;
 
   &.on {
     opacity: 1;
@@ -291,7 +301,15 @@ section {
   }
 
   table {
+    margin-top: 10px;
     width: 100%;
+    border-collapse: collapse;
+
+    td {
+      width: 50%;
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
     td:last-child {
       font-weight: bold;
     }

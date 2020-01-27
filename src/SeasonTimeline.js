@@ -88,8 +88,14 @@ export default class SeasonTimeline extends Vis {
           'x': 190
         })
         .text(player.name)
-        .on('mouseover', (d, i) => this.showPlayerTooltip(player))
-        .on('mouseout', (d, i) => this.hidePlayerTooltip());
+        .on('mouseover', () => {
+          this.showPlayerTooltip(player);
+          this.highlightRow(i);
+        })
+        .on('mouseout', () => {
+          this.hidePlayerTooltip();
+          this.unhighlightRow(i);
+        });
 
     });
 
@@ -150,8 +156,14 @@ export default class SeasonTimeline extends Vis {
         .styles({
           'transform': `translate(0px, ${60 + (i * 20)}px)`
         })
-        .on('mouseover', (d, i) => this.showPlayerTooltip(player))
-        .on('mouseout', (d, i) => this.hidePlayerTooltip());
+        .on('mouseover', () => {
+          this.showPlayerTooltip(player);
+          this.highlightRow(i);
+        })
+        .on('mouseout', () => {
+          this.hidePlayerTooltip();
+          this.unhighlightRow(i);
+        });
 
 
       this.seasons.forEach((season, j) => {
@@ -228,11 +240,11 @@ export default class SeasonTimeline extends Vis {
     }
 
     if (player.firstSeason === '2014.3') {
-      addRow('OG member');
+      addRow('‎★ OG member');
     }
 
     if (player.recruitedBy) {
-      addRow('Recruiter', getPlayerName(player.recruitedBy));
+      addRow('Recruited by', getPlayerName(player.recruitedBy));
     }
     addRow('Joined', player.firstSeason);
     addRow('Seasons', player.seasonCount);
@@ -245,6 +257,15 @@ export default class SeasonTimeline extends Vis {
     d3.select('#tooltip')
       .classed('on', false);
 
+  }
+
+  highlightRow(index) {
+    d3.select(`#timeline div.wrap-names g.row:nth-child(${index + 1})`).classed('selected', true);
+    d3.select(`#timeline div.wrap-timeline g.row:nth-child(${index + 4})`).classed('selected', true);
+  }
+  unhighlightRow(index) {
+    d3.select(`#timeline div.wrap-names g.row:nth-child(${index + 1})`).classed('selected', false);
+    d3.select(`#timeline div.wrap-timeline g.row:nth-child(${index + 4})`).classed('selected', false);
   }
 
   onTooltipMouseMove = (e) => {
