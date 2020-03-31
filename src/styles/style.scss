@@ -1,12 +1,12 @@
 
-$color-vis-bg: #f6f6f6;
+$color-vis-bg: #f9f9f9;
 
-$color-f-a: #3c9;
-$color-m-a: #39c;
-$color-f-b: mix($color-f-a, $color-vis-bg, 30%);
-$color-m-b: mix($color-m-a, $color-vis-bg, 30%);
+$color-f-a: mix(#999, #c68, 50%);
+$color-m-a: mix(#999, #38c, 50%);
+$color-f-b: mix($color-f-a, $color-vis-bg, 25%);
+$color-m-b: mix($color-m-a, $color-vis-bg, 25%);
 
-$color-selected: #96f;
+$color-selected: #36f;
 
 body {
   margin: 0;
@@ -155,7 +155,7 @@ section {
       }
 
       g.season-bgs rect {
-        fill: #fcfcfc;
+        fill: mix($color-m-a, $color-vis-bg, 5%);
       }
 
       g.year-labels,
@@ -208,10 +208,10 @@ section {
           }
           text {
             text-shadow:
-              -1px 0 0 white,
-              0 -1px 0 white,
-              0 1px 0 white,
-              1px 0 0 white;
+              -1px 0 0 $color-vis-bg,
+              0 -1px 0 $color-vis-bg,
+              0 1px 0 $color-vis-bg,
+              1px 0 0 $color-vis-bg;
           }
         }
 
@@ -240,7 +240,7 @@ section {
         }
 
         circle {
-          fill: white;
+          fill: $color-vis-bg;
           stroke-width: 2px;
         }
 
