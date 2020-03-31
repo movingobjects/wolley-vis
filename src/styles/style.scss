@@ -189,6 +189,10 @@ section {
 
       g.node {
 
+        &.root {
+          pointer-events: none;
+        }
+
         &.highlighted {
           &.sex-f {
             fill: $color-f-a;
@@ -224,6 +228,14 @@ section {
             circle {
               stroke: $color-m-b;
             }
+          }
+        }
+
+        &:hover {
+          circle,
+          text {
+            fill: $color-selected !important;
+            cursor: pointer;
           }
         }
 
@@ -311,7 +323,7 @@ section {
 
     td {
       width: 50%;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
       padding: 5px;
     }
     td:last-child {

@@ -200,6 +200,15 @@ export default class SeasonTimeline extends Vis {
 
   }
 
+  highlightRow(index) {
+    d3.select(`#timeline div.wrap-names g.row:nth-child(${index + 1})`).classed('selected', true);
+    d3.select(`#timeline div.wrap-timeline g.row:nth-child(${index + 4})`).classed('selected', true);
+  }
+  unhighlightRow(index) {
+    d3.select(`#timeline div.wrap-names g.row:nth-child(${index + 1})`).classed('selected', false);
+    d3.select(`#timeline div.wrap-timeline g.row:nth-child(${index + 4})`).classed('selected', false);
+  }
+
   showPlayerTooltip(player) {
 
     document.addEventListener('mousemove', this.onTooltipMouseMove);
@@ -259,15 +268,6 @@ export default class SeasonTimeline extends Vis {
 
   }
 
-  highlightRow(index) {
-    d3.select(`#timeline div.wrap-names g.row:nth-child(${index + 1})`).classed('selected', true);
-    d3.select(`#timeline div.wrap-timeline g.row:nth-child(${index + 4})`).classed('selected', true);
-  }
-  unhighlightRow(index) {
-    d3.select(`#timeline div.wrap-names g.row:nth-child(${index + 1})`).classed('selected', false);
-    d3.select(`#timeline div.wrap-timeline g.row:nth-child(${index + 4})`).classed('selected', false);
-  }
-
   onTooltipMouseMove = (e) => {
 
     const {
@@ -275,11 +275,14 @@ export default class SeasonTimeline extends Vis {
       pageY
     } = e;
 
+    const isBelow = pageY < 400,
+          yOffset = isBelow ? 0 : -15;
+
     d3.select('#tooltip')
-      .classed('below', pageY < 400)
+      .classed('below', isBelow)
       .styles({
         left: `${pageX}px`,
-        top: `${pageY}px`
+        top: `${pageY + yOffset}px`
       });
 
   }

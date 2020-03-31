@@ -81,11 +81,18 @@ export default class PlayerTree extends Vis {
       .data(nodes.descendants())
       .enter().append('g')
         .classed('node', true)
+        .classed('root', (d) => d.data.isRoot)
         .classed('highlighted', (d) => this.isHighlighted(d.data))
         .classed('has-children', (d) => d.data.children && d.data.children.length)
         .classed('sex-f', (d) => d.data.sex === 'f')
         .classed('sex-m', (d) => d.data.sex === 'm')
-        .attr('transform', (d) => `translate(${d.y}, ${d.x})`);
+        .attr('transform', (d) => `translate(${d.y}, ${d.x})`)
+        .on('mouseover', (d) => {
+          this.showPlayerTooltip(d.data);
+        })
+        .on('mouseout', () => {
+          this.hidePlayerTooltip();
+        });
 
     node.append('circle')
       .attr('r', (d) => this.isHighlighted(d.data) ? 5 : 3);
@@ -97,6 +104,7 @@ export default class PlayerTree extends Vis {
         'text-anchor': (d, i) => (i === 0) ? 'end' : 'start'
       })
       .text((d) => d.data.name);
+
 
   }
 
@@ -170,6 +178,7 @@ export default class PlayerTree extends Vis {
     return {
       name: 'Wolley CF',
       currentTeam: true,
+      isRoot: true,
       children: getRecruitedBy(null)
     }
 
@@ -189,6 +198,84 @@ export default class PlayerTree extends Vis {
     })
 
     return count;
+
+  }
+
+  showPlayerTooltip(player) {
+
+    document.addEventListener('mousemove', this.onTooltipMouseMove);
+
+    const tooltip = d3.select('#tooltip');
+
+    tooltip
+      .classed('on', true)
+      .html('');
+
+    if (player.image) {
+      tooltip.append('img')
+        .attr('src', player.image);
+    }
+
+    tooltip.append('h3')
+      .text(player.name);
+
+    const table = tooltip.append('table');
+
+    const addRow = (textLeft, textRight) => {
+      const tr = table.append('tr');
+
+      if (textRight) {
+        tr.append('td').text(textLeft);
+        tr.append('td').text(textRight);
+      } else {
+        tr.append('td')
+          .text(textLeft)
+          .attr('colspan', 2);
+      }
+
+    }
+
+    const getPlayerName = (playerId) => {
+      const player = this.players.find((p) => p.id === playerId);
+      return player ? player.name : 'Unknown';
+    }
+
+    if (player.firstSeason === '2014.3') {
+      addRow('‎★ OG member');
+    }
+
+    if (player.recruitedBy) {
+      addRow('Recruited by', getPlayerName(player.recruitedBy));
+    }
+    addRow('Joined', player.firstSeason);
+    addRow('Seasons', player.seasonCount);
+
+  }
+  hidePlayerTooltip() {
+
+    document.removeEventListener('mousemove', this.onTooltipMouseMove);
+
+    d3.select('#tooltip')
+      .classed('on', false);
+
+  }
+
+  onTooltipMouseMove = (e) => {
+
+    const {
+      pageX,
+      pageY
+    } = e;
+
+    const isBelow = pageY < 400,
+          yOffset = isBelow ? 0 : -15;
+
+    d3.select('#tooltip')
+      .classed('below', isBelow)
+      .styles({
+        left: `${pageX}px`,
+        top: `${pageY + yOffset}px`
+      });
 
   }
 
