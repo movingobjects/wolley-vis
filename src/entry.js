@@ -138,6 +138,7 @@ function updateVis() {
   classList.toggle('show-timeline', visId === 'timeline');
 
   updateSortSelects(visId);
+  updateSort();
 
 }
 function updateSort() {
@@ -159,16 +160,19 @@ function updateHighlight() {
 
 function updateSortSelects(visId) {
 
-  const data = sortOptions[visId];
+  const data     = sortOptions[visId],
+        sortKind = selectSort.node().value;
 
   selectSort.html('');
 
   data.forEach((opt) => {
-
     selectSort.append('option')
       .attr('value', opt.value)
       .text(opt.label);
-
   });
+
+  if (data.find((opt) => opt.value === sortKind)) {
+    selectSort.property('value', sortKind);
+  }
 
 }
