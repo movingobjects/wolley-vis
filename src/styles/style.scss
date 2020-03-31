@@ -278,6 +278,10 @@ section {
   transition:
     opacity 0.3s ease 0.1s;
 
+  &.below {
+    transform: translate(-50%, 15px);
+  }
+
   &.on {
     opacity: 1;
     transition:

@@ -270,12 +270,17 @@ export default class SeasonTimeline extends Vis {
 
   onTooltipMouseMove = (e) => {
 
-    d3.select('#tooltip')
-      .styles({
-        left: `${e.pageX}px`,
-        top: `${e.pageY - 15}px`
-      });
+    const {
+      pageX,
+      pageY
+    } = e;
 
+    d3.select('#tooltip')
+      .classed('below', pageY < 400)
+      .styles({
+        left: `${pageX}px`,
+        top: `${pageY}px`
+      });
 
   }
 
