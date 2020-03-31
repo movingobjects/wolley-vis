@@ -7,21 +7,29 @@ import style from './styles/style.scss';
 import PlayerTree from './PlayerTree.js';
 import SeasonTimeline from './SeasonTimeline.js';
 
-const visTree     = new PlayerTree();
-const visTimeline = new SeasonTimeline();
+import { toTreeData } from './utils.js';
+
+import srcData from './data/data.json';
 
 const sortOptions = {
   timeline: [
     { value: 'sort-name', label: 'Name' },
+    { value: 'sort-start', label: 'First Season' },
     { value: 'sort-count', label: '# of Seasons' },
-    { value: 'sort-start', label: 'First Season' }
+    { value: 'sort-recruits', label: '# of Recruits' },
+    { value: 'sort-recruit-progeny', label: '# of Recruit Progeny' },
+    { value: 'sort-recruit-progeny-current', label: '# of Recruit Progeny (Current Team)' }
   ],
   tree: [
     { value: 'sort-name', label: 'Name' },
     { value: 'sort-recruits', label: '# of Recruits' },
-    { value: 'sort-recruits-current', label: '# of Recruits (Current Team)' }
+    { value: 'sort-recruit-progeny', label: '# of Recruit Progeny' },
+    { value: 'sort-recruit-progeny-current', label: '# of Recruit Progeny (Current Team)' }
   ]
 }
+
+let visTree,
+    visTimeline;
 
 let sortBy               = 'sort-name',
     highlightCurrentTeam = false;
@@ -35,6 +43,11 @@ init();
 
 function init() {
 
+  const data  = processData(srcData);
+
+  visTree     = new PlayerTree(data);
+  visTimeline = new SeasonTimeline(data);
+
   selectVis.on('change', () => updateVis());
   selectSort.on('change', () => updateSort());
   checkboxHighlight.on('change', () => updateHighlight());
@@ -42,6 +55,77 @@ function init() {
   updateVis();
   updateSort();
   updateHighlight();
+
+}
+
+function processData(data) {
+
+  const isCurrentTeam = (player) => {
+
+    const currentSeason = data.seasons[data.seasons.length - 1];
+
+    return currentSeason.players.includes(player.id);
+
+  }
+
+  const countRecruits = (player, progeny = false, currentTeam = false) => {
+
+    let count = 0;
+
+    player.children.forEach((child) => {
+      if (!currentTeam || child.currentTeam) count++;
+      if (progeny) {
+        count += countRecruits(child, progeny, currentTeam);
+      }
+    })
+
+    return count;
+
+  }
+
+  const applyRecruitCounts = (player) => {
+
+    if (player.id) {
+
+      const p = data.players.find((p) => p.id === player.id);
+
+      if (p) {
+        p.recruitCount          = countRecruits(player, false, false);
+        p.recruitProgeny        = countRecruits(player, true, false);
+        p.recruitProgenyCurrent = countRecruits(player, true, true);
+      }
+
+    }
+
+    if (player.children) {
+      player.children.forEach((p) => applyRecruitCounts(p));
+    }
+
+  }
+
+  data.players.forEach((player) => {
+
+    let seasonCount = 0;
+
+    data.seasons.forEach((season) => {
+      if (season.players.includes(player.id)) {
+        seasonCount++;
+
+        if (!player.firstSeason) {
+          player.firstSeason = season.id;
+        }
+
+      }
+    })
+
+    player.currentTeam = isCurrentTeam(player);
+    player.seasonCount   = seasonCount;
+
+  });
+
+  applyRecruitCounts(toTreeData(data.players));
+
+  return data;
 
 }
 

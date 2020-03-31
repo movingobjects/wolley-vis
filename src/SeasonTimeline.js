@@ -1,12 +1,11 @@
 
 import * as d3 from 'd3';
-import data from './data/data.json';
 
 import Vis from './Vis';
 
 export default class SeasonTimeline extends Vis {
 
-  constructor() {
+  constructor(data) {
 
     super();
 
@@ -47,6 +46,9 @@ export default class SeasonTimeline extends Vis {
       switch (this.sortBy) {
         case 'sort-count': return (b.seasonCount - a.seasonCount) || (a.firstSeason - b.firstSeason) || ('' + a.name).localeCompare(b.name);
         case 'sort-start': return (a.firstSeason - b.firstSeason) || (b.seasonCount - a.seasonCount) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruits': return (b.recruitCount - a.recruitCount) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruit-progeny': return (b.recruitProgeny - a.recruitProgeny) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruit-progeny-current': return (b.recruitProgenyCurrent - a.recruitProgenyCurrent) || ('' + a.name).localeCompare(b.name);
         default: return (`${a.name}`).localeCompare(b.name);
       }
 
@@ -70,11 +72,11 @@ export default class SeasonTimeline extends Vis {
 
     this.players.forEach((player, i) => {
 
-      let onCurrentTeam = this.isCurrentTeam(player);
+      let highlighted = !this.highlightCurrentTeam || player.currentTeam;
 
       let row = svgNames.append('g')
         .classed('row', true)
-        .classed('highlighted', onCurrentTeam)
+        .classed('highlighted', highlighted)
         .classed('sex-f', player.sex === 'f')
         .classed('sex-m', player.sex === 'm')
         .styles({
@@ -146,11 +148,11 @@ export default class SeasonTimeline extends Vis {
 
     this.players.forEach((player, i) => {
 
-      let onCurrentTeam = this.isCurrentTeam(player);
+      let highlighted = !this.highlightCurrentTeam || player.currentTeam;
 
       let row = svgTimeline.append('g')
         .classed('row', true)
-        .classed('highlighted', onCurrentTeam)
+        .classed('highlighted', highlighted)
         .classed('sex-f', player.sex === 'f')
         .classed('sex-m', player.sex === 'm')
         .styles({
@@ -187,16 +189,6 @@ export default class SeasonTimeline extends Vis {
 
 
     });
-
-  }
-
-  isCurrentTeam(player) {
-
-    if (!this.highlightCurrentTeam) return true;
-
-    const currentSeason = this.seasons[this.seasons.length - 1];
-
-    return currentSeason.players.includes(player.id);
 
   }
 
@@ -257,6 +249,13 @@ export default class SeasonTimeline extends Vis {
     }
     addRow('Joined', player.firstSeason);
     addRow('Seasons', player.seasonCount);
+
+    if (player.recruitCount) {
+      addRow('Recruits', player.recruitCount);
+    }
+    if (player.recruitProgeny) {
+      addRow('Recruit Progeny', `${player.recruitProgeny} (${player.recruitProgenyCurrent} current team)`);
+    }
 
   }
   hidePlayerTooltip() {

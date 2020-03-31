@@ -1,21 +1,21 @@
 
 import * as d3 from 'd3';
-import data from './data/data.json';
 
 import Vis from './Vis';
 
+import { toTreeData } from './utils.js';
+
 export default class PlayerTree extends Vis {
 
-  constructor() {
+  constructor(data) {
 
     super();
 
-    this.players = data.players;
-    this.seasons = data.seasons;
+    this.players     = data.players;
+    this.seasons     = data.seasons;
 
     this.seasons.sort((a, b) => a.year - b.year);
 
-    this.processPlayersData();
     this.reset();
 
   }
@@ -29,8 +29,9 @@ export default class PlayerTree extends Vis {
       switch (this.sortBy) {
         case 'sort-count': return (b.seasonCount - a.seasonCount) || (a.firstSeason - b.firstSeason) || ('' + a.name).localeCompare(b.name);
         case 'sort-start': return (a.firstSeason - b.firstSeason) || (b.seasonCount - a.seasonCount) || ('' + a.name).localeCompare(b.name);
-        case 'sort-recruits': return (b.childCount - a.childCount) || ('' + a.name).localeCompare(b.name);
-        case 'sort-recruits-current': return (b.childCountCurrent - a.childCountCurrent) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruits': return (b.recruitCount - a.recruitCount) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruit-progeny': return (b.recruitProgeny - a.recruitProgeny) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruit-progeny-current': return (b.recruitProgenyCurrent - a.recruitProgenyCurrent) || ('' + a.name).localeCompare(b.name);
         default: return (`${a.name}`).localeCompare(b.name);
       }
 
@@ -52,7 +53,7 @@ export default class PlayerTree extends Vis {
       left: 125
     };
 
-    const treeData = this.toTreeData(this.players);
+    const treeData = toTreeData(this.players);
 
     const tree = d3.tree()
       .size([
@@ -109,96 +110,7 @@ export default class PlayerTree extends Vis {
   }
 
   isHighlighted(player) {
-
-    if (!this.highlightCurrentTeam) return true;
-
-    return this.isCurrentTeam(player);
-
-  }
-  isCurrentTeam(player) {
-
-    const currentSeason = this.seasons[this.seasons.length - 1];
-
-    return currentSeason.players.includes(player.id);
-
-  }
-
-  processPlayersData() {
-
-    const applyChildCounts = (player) => {
-
-      if (player.id) {
-
-        const p = this.players.find((p) => p.id === player.id);
-
-        if (p) {
-          p.childCount        = this.countChildren(player, false);
-          p.childCountCurrent = this.countChildren(player, true) + (this.isCurrentTeam(p) ? 1 : 0);
-        }
-
-      }
-
-      if (player.children) {
-        player.children.forEach((p) => applyChildCounts(p));
-      }
-
-    }
-
-    applyChildCounts(this.toTreeData(this.players));
-
-    this.players.forEach((player) => {
-
-      let count = 0;
-
-      this.seasons.forEach((season) => {
-        if (season.players.includes(player.id)) {
-          count++;
-
-          if (!player.firstSeason) {
-            player.firstSeason = season.id;
-          }
-
-        }
-      })
-
-      player.seasonCount = count;
-
-    });
-
-  }
-  toTreeData(players) {
-
-    const getRecruitedBy = (id) => players
-      .filter((player) => player.recruitedBy === id)
-      .map((player) => ({
-        ...player,
-        children: getRecruitedBy(player.id)
-      }));
-
-    return {
-      name: 'Wolley CF',
-      currentTeam: true,
-      isRoot: true,
-      children: getRecruitedBy(null)
-    }
-
-  }
-
-  countChildren(player, currentTeam = false) {
-
-    let count = 0;
-
-    player.children.forEach((child) => {
-      if (currentTeam) {
-        if (this.isCurrentTeam(child)) count++;
-      } else {
-        count++;
-      }
-      count += this.countChildren(child, currentTeam);
-    })
-
-    return count;
-
+    return !this.highlightCurrentTeam || player.currentTeam;
   }
 
   showPlayerTooltip(player) {
@@ -224,7 +136,7 @@ export default class PlayerTree extends Vis {
     const addRow = (textLeft, textRight) => {
       const tr = table.append('tr');
 
-      if (textRight) {
+      if (textRight !== undefined) {
         tr.append('td').text(textLeft);
         tr.append('td').text(textRight);
       } else {
@@ -247,8 +159,16 @@ export default class PlayerTree extends Vis {
     if (player.recruitedBy) {
       addRow('Recruited by', getPlayerName(player.recruitedBy));
     }
+
     addRow('Joined', player.firstSeason);
     addRow('Seasons', player.seasonCount);
+
+    if (player.recruitCount) {
+      addRow('Recruits', player.recruitCount);
+    }
+    if (player.recruitProgeny) {
+      addRow('Recruit Progeny', `${player.recruitProgeny} (${player.recruitProgenyCurrent} current team)`);
+    }
 
   }
   hidePlayerTooltip() {
