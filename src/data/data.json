@@ -11,7 +11,7 @@
       "id": "alejandra",
       "name": "Alejandra Guzman",
       "sex": "f",
-      "image": "resources/images/alejandra.jpg",
+      "image": "resources/images/players/alejandra.jpg",
       "recruitedBy": "clare"
     },
     {
@@ -25,126 +25,126 @@
       "id": "allison",
       "name": "Allison Gentry",
       "sex": "f",
-      "image": "resources/images/allison.jpg",
+      "image": "resources/images/players/allison.jpg",
       "recruitedBy": "chelsea"
     },
     {
       "id": "amber-b",
       "name": "Amber Banerjee",
       "sex": "f",
-      "image": "resources/images/amber-b.jpg",
+      "image": "resources/images/players/amber-b.jpg",
       "recruitedBy": null
     },
     {
       "id": "amber-w",
       "name": "Amber Wick",
       "sex": "f",
-      "image": "resources/images/amber-w.jpg",
+      "image": "resources/images/players/amber-w.jpg",
       "recruitedBy": null
     },
     {
       "id": "andrew",
       "name": "Andrew Martinez",
       "sex": "m",
-      "image": "resources/images/andrew.jpg",
+      "image": "resources/images/players/andrew.jpg",
       "recruitedBy": "amber-b"
     },
     {
       "id": "anna",
       "name": "Anna Doty",
       "sex": "f",
-      "image": "resources/images/anna.jpg",
+      "image": "resources/images/players/anna.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "annie-a",
       "name": "Annie Ayre",
       "sex": "f",
-      "image": "resources/images/annie-a.jpg",
+      "image": "resources/images/players/annie-a.jpg",
       "recruitedBy": "amber-w"
     },
     {
       "id": "annie-e",
       "name": "Annie Ellis",
       "sex": "f",
-      "image": "resources/images/annie-e.jpg",
+      "image": "resources/images/players/annie-e.jpg",
       "recruitedBy": "clare"
     },
     {
       "id": "armando",
       "name": "Armando Diaz Tolentino",
       "sex": "m",
-      "image": "resources/images/armando.jpg",
+      "image": "resources/images/players/armando.jpg",
       "recruitedBy": null
     },
     {
       "id": "ashley",
       "name": "Ashley McIntyre",
       "sex": "f",
-      "image": "resources/images/ashley.jpg",
+      "image": "resources/images/players/ashley.jpg",
       "recruitedBy": "andrew"
     },
     {
       "id": "brooke",
       "name": "Brooke Richey",
       "sex": "f",
-      "image": "resources/images/brooke.jpg",
+      "image": "resources/images/players/brooke.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "cameron",
       "name": "Cameron Augsten",
       "sex": "m",
-      "image": "resources/images/cameron.jpg",
+      "image": "resources/images/players/cameron.jpg",
       "recruitedBy": "scott-t"
     },
     {
       "id": "candice",
       "name": "Candice Lampe",
       "sex": "f",
-      "image": "resources/images/candice.jpg",
+      "image": "resources/images/players/candice.jpg",
       "recruitedBy": "eli"
     },
     {
       "id": "carlos",
       "name": "Carlos Romo",
       "sex": "m",
-      "image": "resources/images/carlos.jpg",
+      "image": "resources/images/players/carlos.jpg",
       "recruitedBy": "eric"
     },
     {
       "id": "carmela",
       "name": "Carmela Vallalta",
       "sex": "f",
-      "image": "resources/images/carmela.jpg",
+      "image": "resources/images/players/carmela.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "carolin",
       "name": "Carolin Rohe",
       "sex": "f",
-      "image": "resources/images/carolin.jpg",
+      "image": "resources/images/players/carolin.jpg",
       "recruitedBy": "clare"
     },
     {
       "id": "chelsea",
       "name": "Chelsea Williamson",
       "sex": "f",
-      "image": "resources/images/chelsea.jpg",
+      "image": "resources/images/players/chelsea.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "christina",
       "name": "Christina Davis",
       "sex": "f",
-      "image": "resources/images/christina.jpg",
+      "image": "resources/images/players/christina.jpg",
       "recruitedBy": "ryan"
     },
     {
       "id": "clare",
       "name": "Clare Ellis",
       "sex": "f",
-      "image": "resources/images/clare.jpg",
+      "image": "resources/images/players/clare.jpg",
       "recruitedBy": "cameron"
     },
     {
@@ -158,7 +158,7 @@
       "id": "cody-j",
       "name": "Cody Jackson",
       "sex": "m",
-      "image": "resources/images/cody-j.jpg",
+      "image": "resources/images/players/cody-j.jpg",
       "recruitedBy": "clare"
     },
     {
@@ -172,14 +172,14 @@
       "id": "eli",
       "name": "Eli Hanna",
       "sex": "m",
-      "image": "resources/images/eli.jpg",
+      "image": "resources/images/players/eli.jpg",
       "recruitedBy": "cameron"
     },
     {
       "id": "eric",
       "name": "Eric Wick",
       "sex": "m",
-      "image": "resources/images/eric.jpg",
+      "image": "resources/images/players/eric.jpg",
       "recruitedBy": "ryan"
     },
     {
@@ -193,14 +193,14 @@
       "id": "evalynn",
       "name": "Evalynn Romano",
       "sex": "f",
-      "image": "resources/images/evalynn.jpg",
+      "image": "resources/images/players/evalynn.jpg",
       "recruitedBy": "hannah"
     },
     {
       "id": "hannah",
       "name": "Hannah Scholes",
       "sex": "f",
-      "image": "resources/images/hannah.jpg",
+      "image": "resources/images/players/hannah.jpg",
       "recruitedBy": "neal"
     },
     {
@@ -214,14 +214,14 @@
       "id": "jennifer",
       "name": "Jennifer Sonson",
       "sex": "f",
-      "image": "resources/images/jennifer.jpg",
+      "image": "resources/images/players/jennifer.jpg",
       "recruitedBy": "cody-f"
     },
     {
       "id": "jesse",
       "name": "Jesse Palek-Zahn",
       "sex": "m",
-      "image": "resources/images/jesse.jpg",
+      "image": "resources/images/players/jesse.jpg",
       "recruitedBy": "allison"
     },
     {
@@ -242,28 +242,28 @@
       "id": "kc",
       "name": "KC Burt",
       "sex": "f",
-      "image": "resources/images/kc.jpg",
+      "image": "resources/images/players/kc.jpg",
       "recruitedBy": "andrew"
     },
     {
       "id": "kile",
       "name": "Kile Beaudry",
       "sex": "m",
-      "image": "resources/images/kile.jpg",
+      "image": "resources/images/players/kile.jpg",
       "recruitedBy": "mandy"
     },
     {
       "id": "leah",
       "name": "Leah Ganis",
       "sex": "f",
-      "image": "resources/images/leah.jpg",
+      "image": "resources/images/players/leah.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "lynsey",
       "name": "Lynsey Gagnon",
       "sex": "f",
-      "image": "resources/images/lynsey.jpg",
+      "image": "resources/images/players/lynsey.jpg",
       "recruitedBy": "tyler"
     },
     {
@@ -277,7 +277,7 @@
       "id": "mandy",
       "name": "Mandy Beaudry",
       "sex": "f",
-      "image": "resources/images/mandy.jpg",
+      "image": "resources/images/players/mandy.jpg",
       "recruitedBy": "amber-w"
     },
     {
@@ -298,14 +298,14 @@
       "id": "martha",
       "name": "Martha Caldwell",
       "sex": "f",
-      "image": "resources/images/martha.jpg",
+      "image": "resources/images/players/martha.jpg",
       "recruitedBy": "alejandra"
     },
     {
       "id": "molly-a",
       "name": "Molly Ayre-Svingen",
       "sex": "f",
-      "image": "resources/images/molly-a.jpg",
+      "image": "resources/images/players/molly-a.jpg",
       "recruitedBy": "annie-a"
     },
     {
@@ -319,70 +319,70 @@
       "id": "neal",
       "name": "Neal Kawas",
       "sex": "m",
-      "image": "resources/images/neal.jpg",
+      "image": "resources/images/players/neal.jpg",
       "recruitedBy": null
     },
     {
       "id": "paige",
       "name": "Paige Saffell",
       "sex": "f",
-      "image": "resources/images/paige.jpg",
+      "image": "resources/images/players/paige.jpg",
       "recruitedBy": "mandy"
     },
     {
       "id": "paul",
       "name": "Paul Allen",
       "sex": "m",
-      "image": "resources/images/paul.jpg",
+      "image": "resources/images/players/paul.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "peter",
       "name": "Peter Liang",
       "sex": "m",
-      "image": "resources/images/peter.jpg",
+      "image": "resources/images/players/peter.jpg",
       "recruitedBy": null
     },
     {
       "id": "rachel",
       "name": "Rachel Krebs",
       "sex": "f",
-      "image": "resources/images/rachel.jpg",
+      "image": "resources/images/players/rachel.jpg",
       "recruitedBy": "andrew"
     },
     {
       "id": "robert",
       "name": "Robert Sherer",
       "sex": "m",
-      "image": "resources/images/robert.jpg",
+      "image": "resources/images/players/robert.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "ryan",
       "name": "Ryan Davis",
       "sex": "m",
-      "image": "resources/images/ryan.jpg",
+      "image": "resources/images/players/ryan.jpg",
       "recruitedBy": null
     },
     {
       "id": "sarah",
       "name": "Sarah Gannon",
       "sex": "f",
-      "image": "resources/images/sarah.jpg",
+      "image": "resources/images/players/sarah.jpg",
       "recruitedBy": "scott-t"
     },
     {
       "id": "scott-f",
       "name": "Scott Fletcher",
       "sex": "m",
-      "image": "resources/images/scott-f.jpg",
+      "image": "resources/images/players/scott-f.jpg",
       "recruitedBy": "andrew"
     },
     {
       "id": "scott-t",
       "name": "Scott Thiessen",
       "sex": "m",
-      "image": "resources/images/scott-t.jpg",
+      "image": "resources/images/players/scott-t.jpg",
       "recruitedBy": null
     },
     {
@@ -396,7 +396,7 @@
       "id": "tyler",
       "name": "Tyler Engstrom",
       "sex": "m",
-      "image": "resources/images/tyler.jpg",
+      "image": "resources/images/players/tyler.jpg",
       "recruitedBy": null
     }
   ],
