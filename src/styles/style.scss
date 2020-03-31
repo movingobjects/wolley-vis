@@ -3,8 +3,10 @@ $color-vis-bg: #f9f9f9;
 
 $color-f-a: #eb3;
 $color-m-a: #ba9;
-$color-f-b: mix($color-f-a, $color-vis-bg, 25%);
-$color-m-b: mix($color-m-a, $color-vis-bg, 25%);
+$color-f-b: mix($color-f-a, $color-vis-bg, 50%);
+$color-m-b: mix($color-m-a, $color-vis-bg, 50%);
+$color-f-c: mix($color-f-a, $color-vis-bg, 25%);
+$color-m-c: mix($color-m-a, $color-vis-bg, 25%);
 
 $color-selected: #069;
 
@@ -145,11 +147,11 @@ section {
           pointer-events: none;
           &.sex-f text,
           &.sex-f rect {
-            fill: $color-f-b;
+            fill: $color-f-c;
           }
           &.sex-m text,
           &.sex-m rect {
-            fill: $color-m-b;
+            fill: $color-m-c;
           }
         }
       }
@@ -218,15 +220,15 @@ section {
         &:not(.highlighted) {
           pointer-events: none;
           &.sex-f {
-            fill: $color-f-b;
+            fill: $color-f-c;
             circle {
-              stroke: $color-f-b;
+              stroke: $color-f-c;
             }
           }
           &.sex-m {
-            fill: $color-m-b;
+            fill: $color-m-c;
             circle {
-              stroke: $color-m-b;
+              stroke: $color-m-c;
             }
           }
         }
