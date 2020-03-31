@@ -1,10 +1,10 @@
 
-const path                           = require('path');
+const path                  = require('path');
 
-const CopyWebpackPlugin              = require('copy-webpack-plugin'),
-      HtmlWebpackPlugin              = require('html-webpack-plugin'),
-      MiniCssExtractPlugin           = require('mini-css-extract-plugin'),
-      HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const CopyWebpackPlugin     = require('copy-webpack-plugin'),
+      HtmlWebpackPlugin     = require('html-webpack-plugin'),
+      MiniCssExtractPlugin  = require('mini-css-extract-plugin'),
+      HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -180,7 +180,7 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html'
     }),
-    new HtmlWebpackIncludeAssetsPlugin({
+    new HtmlWebpackTagsPlugin({
       assets: [
         'resources/externals/jquery/jquery.' + (isDev ? 'slim' : 'slim.min') + '.js'
       ],
