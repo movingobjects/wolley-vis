@@ -38,5 +38,9 @@
     "d3-selection-multi": "^1.0.1",
     "jquery": "^3.4.1",
     "varyd-utils": "^1.6.1"
+  },
+  "resolutions": {
+    "acorn": "^6.4.1",
+    "minimist": "^1.2.2"
   }
 }
