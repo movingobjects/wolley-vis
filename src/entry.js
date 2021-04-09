@@ -17,14 +17,12 @@ const sortOptions = {
     { value: 'sort-start', label: 'First Season' },
     { value: 'sort-count', label: '# of Seasons' },
     { value: 'sort-recruits', label: '# of Recruits' },
-    { value: 'sort-recruit-progeny', label: '# of Recruit Progeny' },
-    { value: 'sort-recruit-progeny-current', label: '# of Recruit Progeny (Current Team)' }
+    { value: 'sort-recruits-current', label: '# of Recruit (Current Team)' }
   ],
   tree: [
     { value: 'sort-name', label: 'Name' },
     { value: 'sort-recruits', label: '# of Recruits' },
-    { value: 'sort-recruit-progeny', label: '# of Recruit Progeny' },
-    { value: 'sort-recruit-progeny-current', label: '# of Recruit Progeny (Current Team)' }
+    { value: 'sort-recruits-current', label: '# of Recruit (Current Team)' }
   ]
 }
 
@@ -68,15 +66,13 @@ function processData(data) {
 
   }
 
-  const countRecruits = (player, progeny = false, currentTeam = false) => {
+  const countRecruits = (player, currentTeam = false) => {
 
     let count = 0;
 
     player.children.forEach((child) => {
       if (!currentTeam || child.currentTeam) count++;
-      if (progeny) {
-        count += countRecruits(child, progeny, currentTeam);
-      }
+      count += countRecruits(child, currentTeam);
     })
 
     return count;
@@ -90,9 +86,8 @@ function processData(data) {
       const p = data.players.find((p) => p.id === player.id);
 
       if (p) {
-        p.recruitCount          = countRecruits(player, false, false);
-        p.recruitProgeny        = countRecruits(player, true, false);
-        p.recruitProgenyCurrent = countRecruits(player, true, true);
+        p.recruitCount    = countRecruits(player, false, false);
+        p.recruitsCurrent = countRecruits(player, true, true);
       }
 
     }

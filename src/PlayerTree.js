@@ -30,8 +30,7 @@ export default class PlayerTree extends Vis {
         case 'sort-count': return (b.seasonCount - a.seasonCount) || (a.firstSeason - b.firstSeason) || ('' + a.name).localeCompare(b.name);
         case 'sort-start': return (a.firstSeason - b.firstSeason) || (b.seasonCount - a.seasonCount) || ('' + a.name).localeCompare(b.name);
         case 'sort-recruits': return (b.recruitCount - a.recruitCount) || ('' + a.name).localeCompare(b.name);
-        case 'sort-recruit-progeny': return (b.recruitProgeny - a.recruitProgeny) || ('' + a.name).localeCompare(b.name);
-        case 'sort-recruit-progeny-current': return (b.recruitProgenyCurrent - a.recruitProgenyCurrent) || ('' + a.name).localeCompare(b.name);
+        case 'sort-recruits-current': return (b.recruitsCurrent - a.recruitsCurrent) || ('' + a.name).localeCompare(b.name);
         default: return (`${a.name}`).localeCompare(b.name);
       }
 
@@ -166,8 +165,9 @@ export default class PlayerTree extends Vis {
     if (player.recruitCount) {
       addRow('Recruits', player.recruitCount);
     }
-    if (player.recruitProgeny) {
-      addRow('Recruit Progeny', `${player.recruitProgeny} (${player.recruitProgenyCurrent} current team)`);
+
+    if (player.recruitsCurrent) {
+      addRow('Recruits (Current Team)', player.recruitsCurrent);
     }
 
   }
