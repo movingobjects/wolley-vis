@@ -398,6 +398,34 @@
       "sex": "m",
       "image": "resources/images/players/tyler.jpg",
       "recruitedBy": null
+    },
+    {
+      "id": "mithun",
+      "name": "Mithun Thomas",
+      "sex": "m",
+      "image": null,
+      "recruitedBy": "neal"
+    },
+    {
+      "id": "kylie",
+      "name": "Kylie Nelson",
+      "sex": "f",
+      "image": null,
+      "recruitedBy": "mithun"
+    },
+    {
+      "id": "ivonne",
+      "name": "Ivonne Villacis",
+      "sex": "f",
+      "image": null,
+      "recruitedBy": "mithun"
+    },
+    {
+      "id": "ashley-h",
+      "name": "Ashley Hays",
+      "sex": "f",
+      "image": null,
+      "recruitedBy": "mithun"
     }
   ],
   "seasons": [
@@ -996,6 +1024,27 @@
         "ryan",
         "sarah",
         "scott-f",
+        "scott-t"
+      ]
+    },
+    {
+      "id": "2021.1",
+      "year": "2021",
+      "season": "Winter",
+      "players": [
+        "amber-w",
+        "annie-a",
+        "armando",
+        "ashley-h",
+        "carlos",
+        "eric",
+        "ivonne",
+        "jesse",
+        "kylie",
+        "mithun",
+        "neal",
+        "robert",
+        "ryan",
         "scott-t"
       ]
     }
