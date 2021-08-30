@@ -176,6 +176,13 @@
       "recruitedBy": "cameron"
     },
     {
+      "id": "emily",
+      "name": "Emily Blair",
+      "sex": "f",
+      "image": "resources/images/players/emily.jpg",
+      "recruitedBy": "mithun"
+    },
+    {
       "id": "eric",
       "name": "Eric Wick",
       "sex": "m",
@@ -403,21 +410,21 @@
       "id": "mithun",
       "name": "Mithun Thomas",
       "sex": "m",
-      "image": null,
+      "image": "resources/images/players/mithun.jpg",
       "recruitedBy": "neal"
     },
     {
       "id": "kylie",
       "name": "Kylie Nelson",
       "sex": "f",
-      "image": null,
+      "image": "resources/images/players/kylie.jpg",
       "recruitedBy": "mithun"
     },
     {
       "id": "ivonne",
       "name": "Ivonne Villacis",
       "sex": "f",
-      "image": null,
+      "image": "resources/images/players/ivonne.jpg",
       "recruitedBy": "mithun"
     },
     {
@@ -1045,6 +1052,53 @@
         "neal",
         "robert",
         "ryan",
+        "scott-t"
+      ]
+    },
+    {
+      "id": "2021.2",
+      "year": "2021",
+      "season": "Spring",
+      "players": [
+        "amber-w",
+        "annie-a",
+        "armando",
+        "carlos",
+        "emily",
+        "eric",
+        "ivonne",
+        "jesse",
+        "kc",
+        "kylie",
+        "mithun",
+        "neal",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t"
+      ]
+    },
+    {
+      "id": "2021.3",
+      "year": "2021",
+      "season": "Summer",
+      "players": [
+        "amber-w",
+        "annie-a",
+        "armando",
+        "carlos",
+        "emily",
+        "eric",
+        "ivonne",
+        "jesse",
+        "kc",
+        "kylie",
+        "martha",
+        "mithun",
+        "neal",
+        "robert",
+        "ryan",
+        "scott-f",
         "scott-t"
       ]
     }
