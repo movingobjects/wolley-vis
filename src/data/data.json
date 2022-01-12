@@ -446,6 +446,27 @@
       "name": "Alfredo Mendez",
       "sex": "m",
       "image": "resources/images/players/alfredo.jpg",
+      "recruitedBy": "kanae"
+    },
+    {
+      "id": "nora",
+      "name": "Nora Weiss",
+      "sex": "f",
+      "image": "resources/images/players/nora.jpg",
+      "recruitedBy": "kc-d"
+    },
+    {
+      "id": "shawn",
+      "name": "Shawn Query",
+      "sex": "f",
+      "image": "resources/images/players/shawn.jpg",
+      "recruitedBy": "kc-d"
+    },
+    {
+      "id": "brenna",
+      "name": "Brenna Smith",
+      "sex": "f",
+      "image": "resources/images/players/brenna.jpg",
       "recruitedBy": "scott-t"
     }
   ],
@@ -1138,6 +1159,31 @@
         "ryan",
         "scott-f",
         "scott-t"
+      ]
+    },
+    {
+      "id": "2022.4",
+      "year": "2022",
+      "season": "Winter",
+      "players": [
+        "alfredo",
+        "amber-w",
+        "annie-a",
+        "armando",
+        "brenna",
+        "eric",
+        "ivonne",
+        "jesse",
+        "kanae",
+        "kc-b",
+        "kc-d",
+        "neal",
+        "nora",
+        "robert",
+        "ryan",
+        "scott-f",
+        "scott-t",
+        "shawn"
       ]
     }
   ]

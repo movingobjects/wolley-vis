@@ -42,7 +42,7 @@ export default class PlayerTree extends Vis {
 
   initVis() {
 
-    const SVG_W = 1600,
+    const SVG_W = 1400,
           SVG_H = 750;
 
     const SVG_MARGIN = {
